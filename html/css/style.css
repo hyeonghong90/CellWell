@@ -1,0 +1,112 @@
+/* Global */
+.wrapper {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, cursive;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background: black;
+  color: white;
+  padding-top: 30px;
+  min-height: 80px;
+  border-bottom: #60515e 6px solid;
+}
+
+#logo h1 {
+  font-family: Brush Script MT, sans-serif; 
+  font-size: 45px;
+  margin:0;
+}
+
+#logo {
+  float: left;
+}
+
+nav {
+  text-align: center;
+  padding-right: 200px;
+}
+
+nav ul, nav li {
+  display: inline-block;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  border: 2px solid white;
+}
+
+nav li a:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+#intro {
+  min-height: 300px;
+  padding-top: 150px;
+  background:url('../img/phonegifintro.gif') no-repeat 0 -20px;
+  text-align:center;
+  background-color:#00b58b;
+  color: white;
+  border-bottom: #60515e 6px solid;
+}
+
+#intro h1 {
+  font-size: 30px;
+}
+
+.sbutton {
+  cursor: pointer;
+  background-color: #60515e;
+  border: 1;
+  border-color: white;
+  height: 35px;
+  padding-left: 20px;
+  padding-right:20px;
+  color: white;
+}
+
+.login-bar {
+    text-align: center;
+    padding: 20px;
+    background: #60515e;
+    color: white;
+}
+
+/*.login-opt {
+  font-size: 12px;
+}*/
+
+/*phone thumbs here*/
+.phones {
+  margin-top: 30px;
+}
+
+.phones .phone {
+  float: right;
+  text-align: center;
+  width: 20%;
+  padding: 10px;
+}
+
+.phones h1 {
+  text-align: right;
+  padding-right: 430px;
+}
+
+.phones .phone img {
+  width: 90px;
+}
