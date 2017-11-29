@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cell Well</title>
+    <link rel="stylesheet" href="./css/style-default.css">
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 	<script type="text/javascript">
+	$(function(){
+		$('li:has(ul)').click(function(event) {
+				if (this == event.target) {
+					$(this).children().toggle("fast");
+				}
+				return false;
+			})
+
+			.children().hide();
+		$('li:not(:has(ul))').css({cursor:'default', 'list-style-image':'none'});
+	});
+ 	</script>
+
+	</head>
+
+	<body>
+		<header>
+			<div class="wrapper">
+				<div id="logo">
+					<h1>Cell Well</h1>
+				</div>
+
+				<nav>
+					<ul>
+						<li class="active"><a href="index.html"> HOME </a></li>
+						<li><a href="brands.html"> FINDER </a></li>
+						<li><a href="news.html"> DOCS </a></li>
+						<li><a href="CONTACT.html"> MEMBERS </a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<section id="intro">
+			<div class="wrapper">
+				<h1>Find Your Phone</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+       			<!-- Put post method here -->
+       			<form>
+          			<input type="text" placeholder="iPhone X" class="search">
+          			<button type="submit" class="sbutton">Search</button>
+       			</form>
+       			<a href="#" id="adv">Advanced Search</a>
+			</div>
+		</section>
+
+		<section class="login-bar">
+			<div class="wrapper">
+				Username: <input type="text" placeholder="fkmeupfam@gmail.com" name="uname">
+				Password: <input type="password" name="pw" placeholder="•••••••••">
+				<button type="submit" class="sbutton">Log-in</button>
+			</div>
+
+<!-- 			<div class="login-opt">
+				<input type="checkbox" ="remember">Remember Me
+			</div> -->
+		</section>
+
+		<section class="facets">
+	    	<div class="wrapper">
+
+		<ul>
+			<li class="facet-list">Item 1</li>
+			<li class="facet-list">Item 2</li>
+			<li class="facet-list">
+				Item 3
+				<ul>
+					<li class="sub">Item 3.1</li>
+					<li class="sub">Item 3.2</li>
+					<li class="sub">Item 3.3</li>
+				</ul>
+			</li>
+			<li class="facet-list">
+				Item 4
+				<ul>
+					<li class="sub">Item 4.1</li>
+					<li class="sub">Item 4.2</li>	
+				</ul>
+			</li>
+			<li class="facet-list">Item 5</li>
+		</ul>
+
+
+		</div>
+		</section>
+
+		<section class="phones">
+			<div class="wrapper">
+	      		<h1>New Releases</h1>
+
+	        <div class="phone">
+				<img src="./img/iphonex.jpg">
+				<h3>iPhone X</h3>
+	        </div>
+
+	        <div class="phone">
+	         	<img src="./img/iphone8.jpg">
+	         	<h3>iPhone 8</h3>
+	        </div>
+
+	        <div class="phone">
+	        	<img src="./img/razer.jpg">
+	         	<h3>Razer</h3>
+	        </div>
+	      </div>
+    	</section>
+
+		<section class="phones">
+			<div class="wrapper">
+	      		<h1>Most Popular</h1>
+
+	        <div class="phone">
+				<img src="./img/iphonex.jpg">
+				<h3>iPhone X</h3>
+	        </div>
+
+	        <div class="phone">
+	         	<img src="./img/iphone8.jpg">
+	         	<h3>iPhone 8</h3>
+	        </div>
+
+	        <div class="phone">
+	        	<img src="./img/razer.jpg">
+	         	<h3>Razer</h3>
+	        </div>
+	      </div>
+    	</section>
+
+
+	</body>
+
+
+</html>
