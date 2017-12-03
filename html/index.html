@@ -5,22 +5,41 @@
     <meta name="viewport" content="width=device-width">
     <title>Cell Well</title>
     <link rel="stylesheet" href="./css/style-default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
  	<script type="text/javascript">
-	$(function(){
-		$('li:has(ul)').click(function(event) {
-				if (this == event.target) {
-					$(this).children().toggle("fast");
-				}
-				return false;
-			})
+		$(function(){
+			$('li:has(ul)').click(function(event) {
+					if (this == event.target) {
+						$(this).children().toggle("fast");
+					}
+					return false;
+				})
 
-			.children().hide();
-		$('li:not(:has(ul))').css({cursor:'default', 'list-style-image':'none'});
-	});
+				.children().hide();
+			$('li:not(:has(ul))').css({cursor:'default', 'list-style-image':'none'});
+		});
+
+		$(document).ready (function() {
+    		$(document).on("click", "#search-submit", function() {
+        	var $query = $("#search-query").val();
+
+        	$.post("cellwell_master.php", 
+	          {
+	          	user_input: $query
+	          }
+        );
+
+        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+
+        	return false;
+
+/*        $(".phones").remove();*/
+    });
+});
  	</script>
 
 	</head>
@@ -29,7 +48,7 @@
 		<header>
 			<div class="wrapper">
 				<div id="logo">
-					<h1>Cell Well</h1>
+					<h1><a href="index.html">Cell Well</a></h1>
 				</div>
 
 				<nav>
@@ -45,14 +64,17 @@
 
 		<section id="intro">
 			<div class="wrapper">
+				<div id="search-bar">
 				<h1>Find Your Phone</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
        			<!-- Put post method here -->
        			<form>
-          			<input type="text" placeholder="iPhone X" class="search">
-          			<button type="submit" class="sbutton">Search</button>
+          			<input type="text" placeholder="Type model name..." class="search" id="search-query" method="POST">
+          			<a href="results.html"><button type="submit" class="sbutton" id="search-submit">Search</button></a>
        			</form>
+       			<p id="message"></p>
        			<a href="#" id="adv">Advanced Search</a>
+       			</div>
 			</div>
 		</section>
 
@@ -70,26 +92,44 @@
 
 		<section class="facets">
 	    	<div class="wrapper">
-
+	    <h2>Quick Access</h2>
 		<ul>
-			<li class="facet-list">Item 1</li>
-			<li class="facet-list">Item 2</li>
-			<li class="facet-list">
-				Item 3
+			<li class="facet-list">BRANDS
 				<ul>
-					<li class="sub">Item 3.1</li>
-					<li class="sub">Item 3.2</li>
-					<li class="sub">Item 3.3</li>
+					<li name="brand-apple" class="sub">Apple</li>
+					<li name="brand-samsung" class="sub">Samsung</li>
+					<li name="brand-sony" class="sub">Sony</li>
+				</ul>
+			</li>
+			<li class="facet-list">CARRIERS
+				<ul>
+					<li class="sub">AT&T</li>
+					<li class="sub">T-Mobile</li>
+					<li class="sub">Verizon</li>
 				</ul>
 			</li>
 			<li class="facet-list">
-				Item 4
+				DISPLAY SIZE
 				<ul>
-					<li class="sub">Item 4.1</li>
-					<li class="sub">Item 4.2</li>	
+					<li class="sub">6 in.</li>
+					<li class="sub">5 in.</li>
+					<li class="sub">4 in.</li>
 				</ul>
 			</li>
-			<li class="facet-list">Item 5</li>
+			<li class="facet-list">
+				OPERATING SYSTEM
+				<ul>
+					<li class="sub">ANDROID</li>
+					<li class="sub">iOS</li>	
+				</ul>
+			</li>
+			<li class="facet-list">RESOLUTION
+				<ul>
+					<li class="sub">720 x 1280</li>
+					<li class="sub">1080 x 1920</li>
+					<li class="sub">1440 x 2560</li>
+				</ul>
+			</li>
 		</ul>
 
 
@@ -101,17 +141,17 @@
 	      		<h1>New Releases</h1>
 
 	        <div class="phone">
-				<img src="./img/iphonex.jpg">
+				<img src="./img/phone-imgs/iphonex.jpg">
 				<h3>iPhone X</h3>
 	        </div>
 
 	        <div class="phone">
-	         	<img src="./img/iphone8.jpg">
+	         	<img src="./img/phone-imgs/iphone8.jpg">
 	         	<h3>iPhone 8</h3>
 	        </div>
 
 	        <div class="phone">
-	        	<img src="./img/razer.jpg">
+	        	<img src="./img/phone-imgs/razer.jpg">
 	         	<h3>Razer</h3>
 	        </div>
 	      </div>
@@ -122,23 +162,21 @@
 	      		<h1>Most Popular</h1>
 
 	        <div class="phone">
-				<img src="./img/iphonex.jpg">
+				<img src="./img/phone-imgs/iphonex.jpg">
 				<h3>iPhone X</h3>
 	        </div>
 
 	        <div class="phone">
-	         	<img src="./img/iphone8.jpg">
+	         	<img src="./img/phone-imgs/iphone8.jpg">
 	         	<h3>iPhone 8</h3>
 	        </div>
 
 	        <div class="phone">
-	        	<img src="./img/razer.jpg">
+	        	<img src="./img/phone-imgs/razer.jpg">
 	         	<h3>Razer</h3>
 	        </div>
 	      </div>
     	</section>
-
-
 	</body>
 
 
