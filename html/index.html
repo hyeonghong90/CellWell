@@ -20,26 +20,41 @@
 				})
 
 				.children().hide();
-			$('li:not(:has(ul))').css({cursor:'default', 'list-style-image':'none'});
 		});
 
 		$(document).ready (function() {
+
+				// for search bar
     		$(document).on("click", "#search-submit", function() {
-        	var $query = $("#search-query").val();
+	        	var $query = $("#search-query").val();
 
-        	$.post("cellwell_master.php", 
-	          {
-	          	user_input: $query
-	          }
-        );
+	        	$.post("cellwell_master.php", { user_input: $query } );
 
-        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+	        	$("#search-form").trigger("reset");
+	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
-        	return false;
+	        	return false;
+    		});
 
-/*        $(".phones").remove();*/
-    });
-});
+/*    		$(document).on("click", "#brand-apple", function() {
+    			$.post("cellwell_master.php", { facet_keyword: "only-apple" } );
+    			alert("only apple");
+    		}
+
+    		$(document).on("click", "#brand-samsung", function() {
+    			$.post("cellwell_master.php", { facet_keyword: "only-samsung" } );
+    		}*/
+		});
+
+		function facetClick() {
+			var $id = $(this).id;
+
+    		$($id).click(function() {
+    			alert("only apple");
+    		});
+
+    		return false;
+		}
  	</script>
 
 	</head>
@@ -68,7 +83,7 @@
 				<h1>Find Your Phone</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
        			<!-- Put post method here -->
-       			<form>
+       			<form id="search-form">
           			<input type="text" placeholder="Type model name..." class="search" id="search-query" method="POST">
           			<a href="results.html"><button type="submit" class="sbutton" id="search-submit">Search</button></a>
        			</form>
@@ -96,8 +111,8 @@
 		<ul>
 			<li class="facet-list">BRANDS
 				<ul>
-					<li name="brand-apple" class="sub">Apple</li>
-					<li name="brand-samsung" class="sub">Samsung</li>
+					<li id="brand-apple" class="sub" onclick="facetClick()">Apple</li>
+					<li id="brand-samsung" class="sub">Samsung</li>
 					<li name="brand-sony" class="sub">Sony</li>
 				</ul>
 			</li>
