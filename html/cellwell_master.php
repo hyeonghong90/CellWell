@@ -6,7 +6,6 @@ $username = "root";
 $password = "root";
 $db = "cell_well";
 
-//SELECT first_name, last_name, email, address, city 
 // Check connection
 $conn = mysqli_connect($server, $username, $password, $db);
 
@@ -33,29 +32,36 @@ JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
 
+// Adding conditions based on the user query
+if (!$query.includes("WHERE")){
+	$query = $query . "WHERE ";
+}
 if (!empty($_POST["brand"])){
-	$query = $query . "WHERE c1.phoneMaker = " . $_POST["brand"] . "\n";
+	$query = $query . "c1.phoneMaker = " . $_POST["brand"] . "\nAND";
 }
 if (!empty($_POST["carrier"])){
-	$query = $query . "WHERE c5.carrierName = " . $_POST["carrier"] . "\n";
+	$query = $query . "c5.carrierName = " . $_POST["carrier"] . "\nAND";
 }
 if (!empty($_POST["display_size"])){
-	$query = $query . "WHERE c1.displaySizeInches = " . $_POST["display_size"] . "\n";
+	$query = $query . "c1.displaySizeInches = " . $_POST["display_size"] . "\nAND";
 }
 if (!empty($_POST["os"])){
-	$query = $query . "WHERE c1.os = " . $_POST["os"] . "\n";
+	$query = $query . "c1.os = " . $_POST["os"] . "\nAND";
 }
 if (!empty($_POST["resolution"])){
-	$query = $query . "WHERE c1.displaySizeInches = " . $_POST["resolution"] . "\n";
+	$query = $query . "c1.displaySizeInches = " . $_POST["resolution"] . "\nAND";
 }
 if (!empty($_POST["user_input"])){
-	$query = $query . "WHERE c1.cellName = '" . $_POST["user_input"] . "'\n";
+	$query = $query . "c1.cellName = '" . $_POST["user_input"] . "'\nAND";
+}
+
+// removing last "AND"
+if (substr($query, 0, -2) == "AND") {
+	$query = substr($query, 0, -2);
 }
 
 $query = $query . "ORDER BY c1.phoneMaker and c1.cellName;";
 query_to_db($conn, $query);
-
-
 
 mysqli_close($conn);
 
