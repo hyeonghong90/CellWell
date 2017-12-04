@@ -30,10 +30,12 @@
         	$.post("cellwell_master.php", 
 	          {
 	          	user_input: $query
-	          }
+	          }, function(data, status){
+            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
+          }
         );
 
-        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
         	return false;
 

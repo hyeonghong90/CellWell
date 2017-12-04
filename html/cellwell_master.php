@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php 
 
 // forms need to be generated here inside the PHP tag.
@@ -19,66 +15,48 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-// Creating a query
-$query = "SELECT * FROM cell_well.celldata as c1
-JOIN cell_well.celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
-JOIN cell_well.cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
-JOIN cell_well.cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
-JOIN cell_well.cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID";
+// A function for general queries.
+function query_to_db($conn, $sql){
+    $result = mysqli_query($conn, $sql);
 
-$brand_info = $_POST["brand"];
-$carrier_info = $_POST["carrier"];
-$display_size = $_POST["display_size"];
-$os_info = $_POST["os"];
-$resolution_info = $_POST["resolution"];
-
-if (!is_null($brand_info)){
-	brand($brand_info);
-}
-if (!is_null($carrier_info)){
-	carrier($carrier_info);
-}
-if (!is_null($display_size)){
-	display($display_size);
-}
-if (!is_null($os_info)){
-	os($os_info);
-}
-if (!is_null($resolution_info)){
-	resolution($resolution_info);
-}
-
-function brand($info) {
-	$query += "WHERE c1.phoneMaker = " . $info;
-}
-
-function carrier($info) {
-	$query += "WHERE c5.carrierName = " . $info;
-}
-
-function display($info) {
-	$query += "WHERE c1.displaySizeInches = " . $info;
-}
-
-function os($info) {
-	$query += "WHERE c1.os = " . $info;
-}
-
-function resolution($info) {
-	$query += "WHERE c1.displaySizeInches = " . $info;
-}
-
-$query += "ORDER BY c1.phoneMaker and c1.cellName;";
-
-$result = mysqli_query($conn, $query);
-
-if ($result) {   
+    if ($result) {   
         echo "Your query was successful";
-} else {
+    } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 }
+
+// Creating a query
+$query = "SELECT * FROM celldata as c1
+JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
+JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
+JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
+JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
+
+if (!empty($_POST["brand"])){
+	$query = $query . "WHERE c1.phoneMaker = " . $_POST["brand"] . "\n";
+}
+if (!empty($_POST["carrier"])){
+	$query = $query . "WHERE c5.carrierName = " . $_POST["carrier"] . "\n";
+}
+if (!empty($_POST["display_size"])){
+	$query = $query . "WHERE c1.displaySizeInches = " . $_POST["display_size"] . "\n";
+}
+if (!empty($_POST["os"])){
+	$query = $query . "WHERE c1.os = " . $_POST["os"] . "\n";
+}
+if (!empty($_POST["resolution"])){
+	$query = $query . "WHERE c1.displaySizeInches = " . $_POST["resolution"] . "\n";
+}
+if (!empty($_POST["user_input"])){
+	$query = $query . "WHERE c1.cellName = '" . $_POST["user_input"] . "'\n";
+}
+
+$query = $query . "ORDER BY c1.phoneMaker and c1.cellName;";
+query_to_db($conn, $query);
+
+
+
+mysqli_close($conn);
 
 ?>
-
-</body>
-</html>
