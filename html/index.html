@@ -23,27 +23,21 @@
 		});
 
 		$(document).ready (function() {
-
 				// for search bar
     		$(document).on("click", "#search-submit", function() {
 	        	var $query = $("#search-query").val();
 
-	        	$.post("cellwell_master.php", { user_input: $query } );
-
 	        	$("#search-form").trigger("reset");
 	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
-<<<<<<< HEAD
+
         	$.post("cellwell_master.php", 
 	          {
 	          	user_input: $query
-	          }, function(data, status){
-            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
+	          }, function(data, status){/*
+            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);*/
           }
         );
-
-        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
-=======
 	        	return false;
     		});
 
@@ -59,7 +53,6 @@
 
 		function facetClick() {
 			var $id = $(this).id;
->>>>>>> 1ede2784df9886aa15b0c113b95fb7274d55d52d
 
     		$($id).click(function() {
     			alert("only apple");
