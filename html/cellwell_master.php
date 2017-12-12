@@ -19,7 +19,12 @@ function query_to_db($conn, $sql){
     $result = mysqli_query($conn, $sql);
 
     if ($result) {   
-        echo "Your query was successful";
+    	if (!empty($result)){
+    		echo "Your query was successful";
+    	}
+    	else {
+    		echo "No result...";
+    	}
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
