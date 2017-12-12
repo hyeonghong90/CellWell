@@ -27,21 +27,17 @@
     		$(document).on("click", "#search-submit", function() {
 	        	var $query = $("#search-query").val();
 
-	        	$("#search-form").trigger("reset");
-	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+	        	// $("#search-form").trigger("reset");
+	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
 
         	$.post("cellwell_master.php", 
 	          {
 	          	user_input: $query
-	          }, function(data, status){/*
-            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);*/
+	          }, function(data, status){
+            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
           }
         );
-
-
-        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
-
 
 	        	return false;
     		});
