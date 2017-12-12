@@ -30,7 +30,10 @@
 	        	$("#search-form").trigger("reset");
 	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 10f96acb16ac3b3dfb9f190c2b394c98f11b7151
         	$.post("cellwell_master.php", 
 	          {
 	          	user_input: $query
@@ -38,6 +41,12 @@
             $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);*/
           }
         );
+<<<<<<< HEAD
+=======
+
+        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+
+>>>>>>> 10f96acb16ac3b3dfb9f190c2b394c98f11b7151
 	        	return false;
     		});
 
