@@ -97,6 +97,8 @@ nav li a:hover {
   padding-left: 20px;
   padding-right:20px;
   color: white;
+  border-radius: 10px;
+  margin-left: 5px;
 }
 
 #adv {
@@ -130,11 +132,12 @@ nav li a:hover {
     width: 250px;
     text-align: left;
     list-style-type: none;
-    border: #b197ac 1px solid;
+    border: 1 #b197ac 1px solid;
     font-size: 15px;
     transition: 0.5s;
     color: #60515e;
     font-family: "Roboto", sans-serif;
+    border-radius: 10px;
 }
 
 .facets li.facet-list:hover {
@@ -150,6 +153,7 @@ li .sub {
   width: 150px;
   list-style-type: none;
   margin-left: -30px;
+  border-radius: 10px;
 }
 
 li .sub:hover {
@@ -164,6 +168,8 @@ li .sub:hover {
   float: left;
   background-color: #eee;
   border: #b197ac 1px solid;
+  border-radius: 10px;
+  box-shadow: 5px 10px;
 }
 
 .phones .phone {
