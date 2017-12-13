@@ -9,6 +9,7 @@
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
  	<script type="text/javascript">
 /*		$(function(){
@@ -62,9 +63,12 @@
 			// for when facets are clicked, sends data to php
 		$(document).ready (function() {
 			$("#brand-apple").click(function() {
+				$(".phones").fadeOut();
+
     			$.post("cellwell_master.php", { brand: "apple" }, function(data, status) {
-    					alert(data + status);
+    					$(".phones").html("<h1>Results for '" + $("#brand-apple").text() + "'</h1>" + data).fadeIn();
     				});
+
     			}
     		);
 			}
@@ -234,27 +238,6 @@
 		<section class="phones">
 			<div class="wrapper">
 	      		<h1>New Releases</h1>
-
-	        <div class="phone">
-				<img src="./img/phone-imgs/iphonex.jpg">
-				<h3>iPhone X</h3>
-	        </div>
-
-	        <div class="phone">
-	         	<img src="./img/phone-imgs/iphone8.jpg">
-	         	<h3>iPhone 8</h3>
-	        </div>
-
-	        <div class="phone">
-	        	<img src="./img/phone-imgs/razer.jpg">
-	         	<h3>Razer</h3>
-	        </div>
-	      </div>
-    	</section>
-
-		<section class="phones">
-			<div class="wrapper">
-	      		<h1>Most Popular</h1>
 
 	        <div class="phone">
 				<img src="./img/phone-imgs/iphonex.jpg">
