@@ -1,82 +1,72 @@
 <?php
 
-ini_set('display_errors', 1);
-require '../credentials.inc.php';
-$conn = pg_connect('host=' . DBHOST . ' dbname=' . DBNAME . ' user=' . DBUSER . ' password=' . DBPASS);
+// forms need to be generated here inside the PHP tag.
+$server = "localhost";
+$username = "root";
+$password = "root";
+$db = "cell_well";
 
-if (!$conn){
-	die("Error in connection!");
+// Check connection
+$conn = mysqli_connect($server, $username, $password, $db);
+
+// Check connection
+if (!$conn) {
+	die("Connection failed: " . mysqli_connect_error());
 }
 
-// A function to get corresponding parcel_id.
-function get_parcel_id($conn, $block_num, $parcel_num){
-	$query = "SELECT parcel_id 
-	FROM humanface.parcels
-	WHERE parcel_no = $parcel_num AND block_no = $block_num;";
+// A function to get corresponding cellID.
+function get_cell_id($conn, $manufacturer_name, $model_name){
+	$query = "SELECT cellID 
+	FROM cell_well.celldata
+	WHERE phoneMaker = '" . $manufacturer_name . "' AND cellName = '" . $model_name . "';";
 
-	$result = pg_query($conn, $query);
+	$result = mysqli_query($conn, $query);
 
-	if (pg_num_rows($result) > 0) {
-    	while($row = pg_fetch_assoc($result)) {
-    		$id = $row["parcel_id"];
+	if (mysqli_num_rows($result) > 0) {
+    	while($row = mysqli_fetch_assoc($result)) {
+    		$id = $row["cellID"];
     	}
-	} else {
-		$insert_query = "INSERT INTO parcels (block_no, parcel_no)
-		VALUES ($block_num, $parcel_num);";
-
-		pg_query($conn, $insert_query);
-		return get_parcel_id($conn, $block_num, $parcel_num);
+		return $id;
 	}
-	return $id;
 }
 
 // A function to insert image path.
-function insert_img_path($conn, $img_path, $parcel_id){
-	$img_query = "INSERT INTO image_paths (img_path, parcel_id)
-	VALUES ($img_path, $parcel_id);";
+function insert_img_path($conn, $img_path, $cell_id){
+	$img_query = "INSERT INTO cell_well.pictures (picture_path, cellData_cellID)
+	VALUES ('" . $img_path . "', '" . $cell_id . "');";
 
-	pg_query($conn, $img_query);
+	mysqli_query($conn, $img_query);
 }
 
 // Code starts here.
-$dir_path = "/var/www/html/images/properties/";
+// $dir_path = "/var/www/html/img/phone-imgs/";
+$dir_path = "C:/git/CellWell/html/img/phone-imgs/";
 
 $files = scandir($dir_path);
 
 foreach ($files as $file){
 	if (strlen($file) > 2){
-		$prop = explode(".", $file);
+		$phone = explode(".", $file);
 
-		// extract the block number.
-		$block_info = split('[_]', $prop[0])[0];
+		// extract the manufacturer name.
+		$manufacturer_name = explode("_", $phone[0])[0];
+		// split('[_]', $phone[0])[0];
 
-		// handle when block number contains a letter
-		if (substr($block_info, -1) == "A" || substr($block_info, -1) == "B"){
-			$block_info = substr($block_info, 0, strlen($block_info)-1);
-		}	
-		$block_num = substr($block_info, 1);
+		// extract the model name.    Google_Google Pixel_1.jpg
+		$model_name = explode("_", $phone[0])[1];
+		// split('[_]', $phone[0])[1];
 
-		// extract the parcel number.
-		$parcel_info = split('[_&]', $prop[0])[1];
-		if (substr($parcel_info, -1) == "A" || substr($parcel_info, -1) == "B"
-			|| substr($parcel_info, -1) == "C"){
-			$parcel_info = substr($parcel_info, 0, strlen($parcel_info)-1);
-		}
-		$parcel_num = substr($parcel_info, 1);
-
-		// get image_paths table properties.
-		// get corresponding parcel id.
-		$parcel_id_fk = get_parcel_id($conn, $block_num, $parcel_num);
+		//
+		$cell_id_fk = get_cell_id($conn, $manufacturer_name, $model_name);
 
 		// get corresponding image path.
-		$img_path = "'images/properties/" . $file . "'";
+		$img_path = "'img/phone-imgs/" . $file . "'";
 
 		// inserting the path.
-		insert_img_path($conn, $img_path, $parcel_id_fk);
+		insert_img_path($conn, $img_path, $cell_id_fk);
 	}
 }
 
 echo "Successful";
 
-pg_close($conn);
 ?>
