@@ -42,7 +42,8 @@
 	          {
 	          	user_input: $query
 	          }, function(data, status){
-            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
+            // $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
+            alert(data + status);
           }
         );
 

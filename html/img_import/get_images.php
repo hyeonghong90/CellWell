@@ -22,16 +22,32 @@ function get_cell_id($conn, $manufacturer_name, $model_name){
 
 	$result = mysqli_query($conn, $query);
 
-	if (mysqli_num_rows($result) > 0) {
-    	while($row = mysqli_fetch_assoc($result)) {
-    		$id = $row["cellID"];
+	if ($result) {   
+    	if (mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)) {
+                return $row["cellID"];
+            }
+    		// echo "Your query was successful";
+    	} else {
+    		echo "No result...";
     	}
-		return $id;
-	}
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+
+
+	// if (mysqli_num_rows($result) > 0) {
+ //    	while($row = mysqli_fetch_assoc($result)) {
+ //    		$id = $row["cellID"];
+ //    	}
+	// 	return $id;
+	// }
 }
 
 // A function to insert image path.
 function insert_img_path($conn, $img_path, $cell_id){
+	echo $img_path . "   /   " . $cell_id . "<br>";
 	$img_query = "INSERT INTO cell_well.pictures (picture_path, cellData_cellID)
 	VALUES ('" . $img_path . "', '" . $cell_id . "');";
 
@@ -66,7 +82,5 @@ foreach ($files as $file){
 		insert_img_path($conn, $img_path, $cell_id_fk);
 	}
 }
-
-echo "Successful";
 
 ?>
