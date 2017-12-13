@@ -39,7 +39,7 @@ JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
 
-// $query = "SELECT * FROM celldata as c1\n";
+$query = "SELECT * FROM celldata as c1\n";
 
 // Adding conditions based on the user query
 if (strpos($query, 'WHERE') == false){
