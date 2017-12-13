@@ -17,12 +17,13 @@ if (!$conn) {
 // A function for general queries.
 function query_to_db($conn, $sql){
     $result = mysqli_query($conn, $sql);
-
     if ($result) {   
-    	if (!empty($result)){
-    		echo "Your query was successful";
-    	}
-    	else {
+    	if (mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<div class='phone'><h3>" . $row["cellName"] . "</h3></div>";
+            }
+    		// echo "Your query was successful";
+    	} else {
     		echo "No result...";
     	}
     } else {
@@ -30,42 +31,44 @@ function query_to_db($conn, $sql){
     }
 }
 
-// Creating a query
+/*// Creating a query
 $query = "SELECT * FROM celldata as c1
 JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
-JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
+JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";*/
+
+$query = "SELECT * FROM celldata as c1\n";
 
 // Adding conditions based on the user query
-if (!$query.includes("WHERE")){
+if (strpos($query, 'WHERE') == false){
 	$query = $query . "WHERE ";
 }
 if (!empty($_POST["brand"])){
-	$query = $query . "c1.phoneMaker = " . $_POST["brand"] . "\nAND";
+	$query = $query . "c1.phoneMaker = '" . $_POST["brand"] . "'\nAND";
 }
 if (!empty($_POST["carrier"])){
-	$query = $query . "c5.carrierName = " . $_POST["carrier"] . "\nAND";
+	$query = $query . "c5.carrierName = '" . $_POST["carrier"] . "'\nAND";
 }
 if (!empty($_POST["display_size"])){
-	$query = $query . "c1.displaySizeInches = " . $_POST["display_size"] . "\nAND";
+	$query = $query . "c1.displaySizeInches = '" . $_POST["display_size"] . "'\nAND";
 }
 if (!empty($_POST["os"])){
-	$query = $query . "c1.os = " . $_POST["os"] . "\nAND";
+	$query = $query . "c1.os = '" . $_POST["os"] . "'\nAND";
 }
 if (!empty($_POST["resolution"])){
-	$query = $query . "c1.displaySizeInches = " . $_POST["resolution"] . "\nAND";
+	$query = $query . "c1.displaySizeInches = '" . $_POST["resolution"] . "'\nAND";
 }
 if (!empty($_POST["user_input"])){
-	$query = $query . "c1.cellName = '" . $_POST["user_input"] . "'\nAND";
+	$query = $query . "c1.cellName LIKE '%" . $_POST["user_input"] . "%'\nAND";
 }
 
 // removing last "AND"
-if (substr($query, 0, -2) == "AND") {
-	$query = substr($query, 0, -2);
+if (substr($query, -3, 3) == "AND") {
+	$query = substr($query, 0, -3);
 }
 
-$query = $query . "ORDER BY c1.phoneMaker and c1.cellName;";
+$query = $query . "ORDER BY c1.phoneMaker AND c1.cellName;";
 query_to_db($conn, $query);
 
 mysqli_close($conn);

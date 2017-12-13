@@ -9,9 +9,10 @@
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
  	<script type="text/javascript">
-		$(function(){
+/*		$(function(){
 			$('li:has(ul)').click(function(event) {
 					if (this == event.target) {
 						$(this).children().toggle("fast");
@@ -20,50 +21,117 @@
 				})
 
 				.children().hide();
-		});
+		});*/
+
+		$("#search-again").hide();
 
 		$(document).ready (function() {
-				// for search bar
+			
+			$("#search-again").hide();
+
     		$(document).on("click", "#search-submit", function() {
 	        	var $query = $("#search-query").val();
+				$("#intro").slideUp();
+				$("#filler-msg").hide();
+				$("#search-again").fadeIn(1000);
 
 	        	$("#search-form").trigger("reset");
-	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
 
         	$.post("cellwell_master.php", 
 	          {
 	          	user_input: $query
-	          }, function(data, status){/*
-            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);*/
+	          }, function(data, status){
+           			$("#query-confirm").html(data);
           }
         );
-
-
-        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
-
 
 	        	return false;
     		});
 
-/*    		$(document).on("click", "#brand-apple", function() {
-    			$.post("cellwell_master.php", { facet_keyword: "only-apple" } );
-    			alert("only apple");
-    		}
-
-    		$(document).on("click", "#brand-samsung", function() {
-    			$.post("cellwell_master.php", { facet_keyword: "only-samsung" } );
-    		}*/
-		});
-
-		function facetClick() {
-			var $id = $(this).id;
-
-    		$($id).click(function() {
-    			alert("only apple");
+    		$("#header-slider").click(function() {
+    			$("#intro").slideDown();
+    			$("#filler-msg").fadeIn(1000);
+    			$("#search-again").hide();
     		});
 
-    		return false;
+		});
+
+		$
+
+			// for when facets are clicked, sends data to php
+		$(document).ready (function() {
+			$("#brand-apple").click(function() {
+				$(".phones").fadeOut();
+
+    			$.post("cellwell_master.php", { brand: "apple" }, function(data, status) {
+    					$(".phones").html("<h1>Results for '" + $("#brand-apple").text() + "'</h1>" + data).fadeIn();
+    				});
+
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#brand-samsung").click(function() {
+    			$.post("cellwell_master.php", { brand: "samsung" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#carrier-att").click(function() {
+    			$.post("cellwell_master.php", { carrier: "AT&T" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#display-6").click(function() {
+    			$.post("cellwell_master.php", { display_size: "6.0" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#os-android").click(function() {
+    			$.post("cellwell_master.php", { os: "android" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+
+		$(document).ready (function() {
+			$("#res-720x1280").click(function() {
+    			$.post("cellwell_master.php", { resolution: "720x1280" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+			// test function for clicking facets
+		function facetClick() {
+    		$(this).click(function() {
+    			var $value = $(this).attr("id");
+			console.log($value);
+    			alert($value);
+    		});
 		}
  	</script>
 
@@ -105,9 +173,12 @@
 
 		<section class="login-bar">
 			<div class="wrapper">
-				Username: <input type="text" placeholder="fkmeupfam@gmail.com" name="uname">
-				Password: <input type="password" name="pw" placeholder="•••••••••">
-				<button type="submit" class="sbutton">Log-in</button>
+				<div id="filler-msg"><img src="./img/lightbulb.png">
+					<p><i>Cell Well</i> is a database of smartphones tailored<br/> for submission to Myeong Lee.</p></div>
+				<div id="search-again">
+					<p id="query-confirm"></p>
+				<button id="header-slider" type="button" class="sbutton">Search Again?</button>
+				</div>
 			</div>
 
 <!-- 			<div class="login-opt">
@@ -119,16 +190,18 @@
 	    	<div class="wrapper">
 	    <h2>Quick Access</h2>
 		<ul>
-			<li class="facet-list">BRANDS
+			<li class="facet-list">
+				BRANDS
 				<ul>
-					<li id="brand-apple" class="sub" onclick="facetClick()">Apple</li>
+					<li id="brand-apple" class="sub">Apple</li>
 					<li id="brand-samsung" class="sub">Samsung</li>
-					<li name="brand-sony" class="sub">Sony</li>
+					<li id="brand-sony" class="sub">Sony</li>
 				</ul>
 			</li>
-			<li class="facet-list">CARRIERS
+			<li class="facet-list">
+				CARRIERS
 				<ul>
-					<li class="sub">AT&T</li>
+					<li id="carrier-att" class="sub">AT&T</li>
 					<li class="sub">T-Mobile</li>
 					<li class="sub">Verizon</li>
 				</ul>
@@ -136,7 +209,7 @@
 			<li class="facet-list">
 				DISPLAY SIZE
 				<ul>
-					<li class="sub">6 in.</li>
+					<li id="display-6" class="sub">6 in.</li>
 					<li class="sub">5 in.</li>
 					<li class="sub">4 in.</li>
 				</ul>
@@ -144,13 +217,14 @@
 			<li class="facet-list">
 				OPERATING SYSTEM
 				<ul>
-					<li class="sub">ANDROID</li>
+					<li id="os-android" class="sub">ANDROID</li>
 					<li class="sub">iOS</li>	
 				</ul>
 			</li>
-			<li class="facet-list">RESOLUTION
+			<li class="facet-list">
+				RESOLUTION
 				<ul>
-					<li class="sub">720 x 1280</li>
+					<li id="res-720x1280" class="sub">720 x 1280</li>
 					<li class="sub">1080 x 1920</li>
 					<li class="sub">1440 x 2560</li>
 				</ul>
@@ -164,27 +238,6 @@
 		<section class="phones">
 			<div class="wrapper">
 	      		<h1>New Releases</h1>
-
-	        <div class="phone">
-				<img src="./img/phone-imgs/iphonex.jpg">
-				<h3>iPhone X</h3>
-	        </div>
-
-	        <div class="phone">
-	         	<img src="./img/phone-imgs/iphone8.jpg">
-	         	<h3>iPhone 8</h3>
-	        </div>
-
-	        <div class="phone">
-	        	<img src="./img/phone-imgs/razer.jpg">
-	         	<h3>Razer</h3>
-	        </div>
-	      </div>
-    	</section>
-
-		<section class="phones">
-			<div class="wrapper">
-	      		<h1>Most Popular</h1>
 
 	        <div class="phone">
 				<img src="./img/phone-imgs/iphonex.jpg">
