@@ -43,19 +43,65 @@
 
 		});
 
+			// for when facets are clicked, sends data to php
 		$(document).ready (function() {
-
 			$("#brand-apple").click(function() {
-
-    			$.post("cellwell_master.php",
-    				{ brand: "apple" }, function(data, status) {
+    			$.post("cellwell_master.php", { brand: "apple" }, function(data, status) {
     					alert(data + status);
     				});
-
-
     			}
     		);
+			}
+		);
 
+		$(document).ready (function() {
+			$("#brand-samsung").click(function() {
+    			$.post("cellwell_master.php", { brand: "samsung" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#carrier-att").click(function() {
+    			$.post("cellwell_master.php", { carrier: "AT&T" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#display-6").click(function() {
+    			$.post("cellwell_master.php", { display_size: "6.0" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+		$(document).ready (function() {
+			$("#os-android").click(function() {
+    			$.post("cellwell_master.php", { os: "android" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
+			}
+		);
+
+
+		$(document).ready (function() {
+			$("#res-720x1280").click(function() {
+    			$.post("cellwell_master.php", { resolution: "720x1280" }, function(data, status) {
+    					alert(data + status);
+    				});
+    			}
+    		);
 			}
 		);
 
@@ -121,16 +167,18 @@
 	    	<div class="wrapper">
 	    <h2>Quick Access</h2>
 		<ul>
-			<li class="facet-list">BRANDS
+			<li class="facet-list">
+				BRANDS
 				<ul>
 					<li id="brand-apple" class="sub">Apple</li>
 					<li id="brand-samsung" class="sub">Samsung</li>
-					<li name="brand-sony" class="sub">Sony</li>
+					<li id="brand-sony" class="sub">Sony</li>
 				</ul>
 			</li>
-			<li class="facet-list">CARRIERS
+			<li class="facet-list">
+				CARRIERS
 				<ul>
-					<li class="sub">AT&T</li>
+					<li id="carrier-att" class="sub">AT&T</li>
 					<li class="sub">T-Mobile</li>
 					<li class="sub">Verizon</li>
 				</ul>
@@ -138,7 +186,7 @@
 			<li class="facet-list">
 				DISPLAY SIZE
 				<ul>
-					<li class="sub">6 in.</li>
+					<li id="display-6" class="sub">6 in.</li>
 					<li class="sub">5 in.</li>
 					<li class="sub">4 in.</li>
 				</ul>
@@ -146,13 +194,14 @@
 			<li class="facet-list">
 				OPERATING SYSTEM
 				<ul>
-					<li class="sub">ANDROID</li>
+					<li id="os-android" class="sub">ANDROID</li>
 					<li class="sub">iOS</li>	
 				</ul>
 			</li>
-			<li class="facet-list">RESOLUTION
+			<li class="facet-list">
+				RESOLUTION
 				<ul>
-					<li class="sub">720 x 1280</li>
+					<li id="res-720x1280" class="sub">720 x 1280</li>
 					<li class="sub">1080 x 1920</li>
 					<li class="sub">1440 x 2560</li>
 				</ul>
