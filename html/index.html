@@ -23,8 +23,6 @@
 				.children().hide();
 		});*/
 
-		$("#search-again").hide();
-
 		$(document).ready (function() {
 			
 			$("#search-again").hide();
@@ -39,16 +37,13 @@
 	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
 
-        	$.post("cellwell_master.php", 
-	          {
-	          	user_input: $query
-	          }, function(data, status){
+        	$.post("cellwell_master.php", { user_input: $query }, function(data, status) {
            			$("#query-confirm").html(data);
-          }
+          	}
         );
-
 	        	return false;
-    		});
+    		}
+    	);
 
     		$("#header-slider").click(function() {
     			$("#intro").slideDown();
@@ -56,12 +51,44 @@
     			$("#search-again").hide();
     		});
 
-		});
+    		$("#brand-apple").click(function() {
+				$(".phones").fadeOut();
 
-		$
+    			$.post("cellwell_master.php", { brand: "apple" }, function(data, status) {
+    					$(".phones").html("<h1>Results for '" + $("#brand-apple").text() + "'</h1>" + data).fadeIn();
+    				});
+    			}
+    		);
+
+    		$("#brand-samsung").click(function() {
+				$(".phones").fadeOut();
+
+    			$.post("cellwell_master.php", { brand: "samsung" }, function(data, status) {
+    					$(".phones").html("<h1>Results for '" + $("#brand-samsung").text() + "'</h1>" + data).fadeIn();
+    				});
+    			}
+    		);
+
+    		$("#brand-sony").click(function() {
+				$(".phones").fadeOut();
+
+    			$.post("cellwell_master.php", { brand: "sony" }, function(data, status) {
+    					$(".phones").html("<h1>Results for '" + $("#brand-sony").text() + "'</h1>" + data).fadeIn();
+    				});
+    			}
+    		);
+
+    		$("#carrier-att").click(function() {
+    			$.post("cellwell_master.php", { carrier: "AT&T" }, function(data, status) {
+    					$(".phones").html("<h1>Results for '" + $("#carrier-att").text() + "'</h1>" + data).fadeIn();
+    				});
+    			}
+    		);
+
+		}); // end of doc.ready
 
 			// for when facets are clicked, sends data to php
-		$(document).ready (function() {
+/*		$(document).ready (function() {
 			$("#brand-apple").click(function() {
 				$(".phones").fadeOut();
 
@@ -72,19 +99,28 @@
     			}
     		);
 			}
-		);
+		);*/
 
-		$(document).ready (function() {
+/*		$(document).ready (function() {
 			$("#brand-samsung").click(function() {
+				$(".phones").fadeOut();
+
     			$.post("cellwell_master.php", { brand: "samsung" }, function(data, status) {
-    					alert(data + status);
+    					$(".phones").html("<h1>Results for '" + $("#brand-samsung").text() + "'</h1>" + data).fadeIn();
     				});
     			}
     		);
 			}
-		);
+		);*/
 
-		$(document).ready (function() {
+/*		$(".carrier").click(function(e){
+			carrier = e.target.name; 
+			switch (carrier){
+				case "LG":
+					sadlkfj
+		})*/
+
+		/*$(document).ready (function() {
 			$("#carrier-att").click(function() {
     			$.post("cellwell_master.php", { carrier: "AT&T" }, function(data, status) {
     					alert(data + status);
@@ -123,7 +159,7 @@
     			}
     		);
 			}
-		);
+		);*/
 
 			// test function for clicking facets
 		function facetClick() {
