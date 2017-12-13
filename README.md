@@ -35,7 +35,7 @@ Displays the main components a smartphone user looks for when searching for the 
 Ex. Phone Carriers, Brands, New Releases, Display Size, Operating System, Resolution
 
 **Remainder of Site Design Pages:**
-Displays simplistic view of of the clicked reference by using large text and graphical guides.
+Displays simplistic view of the clicked reference by using large text and graphical guides.
 Other smartphone databases overload users with excess information that the average phone buyer
 does understand or care about. We will minimize that.
 
