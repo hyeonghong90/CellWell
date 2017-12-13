@@ -11,7 +11,7 @@
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
  	<script type="text/javascript">
-		$(function(){
+/*		$(function(){
 			$('li:has(ul)').click(function(event) {
 					if (this == event.target) {
 						$(this).children().toggle("fast");
@@ -20,7 +20,7 @@
 				})
 
 				.children().hide();
-		});
+		});*/
 
 		$(document).ready (function() {
 				// for search bar
@@ -39,28 +39,28 @@
             // $("#message").text(data);
           }
         );
-
 	        	return false;
     		});
 
-/*    		$(document).on("click", "#brand-apple", function() {
-    			$.post("cellwell_master.php", { facet_keyword: "only-apple" } );
-    			alert("only apple");
-    		}
-
-    		$(document).on("click", "#brand-samsung", function() {
-    			$.post("cellwell_master.php", { facet_keyword: "only-samsung" } );
-    		}*/
 		});
 
-		function facetClick() {
-			var $id = $(this).id;
+		$(document).ready (function() {
 
-    		$($id).click(function() {
-    			alert("only apple");
+			$("#brand-apple").click(function() {
+    			var $value = $(this).attr("id");
+			console.log($value);
+    			alert($value);
     		});
 
-    		return false;
+		})
+
+			// test function for clicking facets
+		function facetClick() {
+    		$(this).click(function() {
+    			var $value = $(this).attr("id");
+			console.log($value);
+    			alert($value);
+    		});
 		}
  	</script>
 
@@ -118,7 +118,7 @@
 		<ul>
 			<li class="facet-list">BRANDS
 				<ul>
-					<li id="brand-apple" class="sub" onclick="facetClick()">Apple</li>
+					<li id="brand-apple" class="sub">Apple</li>
 					<li id="brand-samsung" class="sub">Samsung</li>
 					<li name="brand-sony" class="sub">Sony</li>
 				</ul>
