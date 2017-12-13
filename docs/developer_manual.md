@@ -17,8 +17,10 @@ Developer's Manual Cell Well
 	Ensure these versions are running on your MAC OSX, Windows, and Linux systems <br>
 	to effectively use your PC as a server to test code. <br>
 	<br>
-** Install a IDE ** <br>
-	Install an IDE that integrates: <br>
+**Install IDE** <br>
+	1.) *Install an IDE that supports your code* <br>
+	
+	
 	
 
 	
