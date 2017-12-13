@@ -3,9 +3,7 @@ Developer's Manual Cell Well
 
 ### Setting Up:
 
-
-**Windows:** <br>
-Install Local Environment MAMP (for MacOS and Windows users)<br>
+**Install Local Environment MAMP (for MacOS and Windows users)**<br>
 	1.)  Download: <br>
 	MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
 	Download MAMP & MAMP PRO 3.3.1 (Windows) <br>
