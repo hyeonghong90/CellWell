@@ -1,7 +1,7 @@
 Developer's Manual Cell Well
 ======
 
-### Setting Up:
+## Setting Up:
 
 **Install Local Environment MAMP (for MacOS and Windows users)**<br>
 	1.)  *Download:* <br>
