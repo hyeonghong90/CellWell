@@ -22,10 +22,17 @@
 				.children().hide();
 		});*/
 
+		$("#search-again").hide();
+
 		$(document).ready (function() {
-				// for search bar
+			
+			$("#search-again").hide();
+
     		$(document).on("click", "#search-submit", function() {
 	        	var $query = $("#search-query").val();
+				$("#intro").slideUp();
+				$("#filler-msg").hide();
+				$("#search-again").fadeIn(1000);
 
 	        	// $("#search-form").trigger("reset");
 	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
@@ -38,10 +45,19 @@
             $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
           }
         );
+
 	        	return false;
     		});
 
+    		$("#header-slider").click(function() {
+    			$("#intro").slideDown();
+    			$("#filler-msg").fadeIn(1000);
+    			$("#search-again").hide();
+    		});
+
 		});
+
+		$
 
 			// for when facets are clicked, sends data to php
 		$(document).ready (function() {
@@ -153,9 +169,11 @@
 
 		<section class="login-bar">
 			<div class="wrapper">
-				Username: <input type="text" placeholder="fkmeupfam@gmail.com" name="uname">
-				Password: <input type="password" name="pw" placeholder="•••••••••">
-				<button type="submit" class="sbutton">Log-in</button>
+				<p id="filler-msg">Cell Well is a database of smartphones tailored for submission to Myeong Lee.</p>
+				<div id="search-again">
+					<p>Results for query below.</p>
+				<button id="header-slider" type="button" class="sbutton">Search Again?</button>
+				</div>
 			</div>
 
 <!-- 			<div class="login-opt">

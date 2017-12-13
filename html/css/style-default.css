@@ -67,6 +67,7 @@ nav li a:hover {
   background-color: #00b58b;
   color: white;
   border-bottom: #60515e 6px solid;
+  position: relative;
 }
 
 #intro h1 {
@@ -81,6 +82,11 @@ nav li a:hover {
 .search {
   height: 30px;
 }
+
+/*#search-again {
+  display: none;
+  visibility: 
+}*/
 
 .sbutton {
   cursor: pointer;
