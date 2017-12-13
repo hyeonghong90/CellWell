@@ -20,7 +20,7 @@ function query_to_db($conn, $sql){
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='wrapper'><div class='phone'><h3>" . $row["cellName"] . "</h3></div></div>";
+                echo "<div class='wrapper'><a href='specs.html'><div class='phone' id='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div></a></div>";
             }
     		// echo "Your query was successful";
     	} else {
@@ -58,7 +58,7 @@ if (!empty($_POST["os"])){
 	$query = $query . "c1.os = '" . $_POST["os"] . "'\nAND";
 }
 if (!empty($_POST["resolution"])){
-	$query = $query . "c1.displaySizeInches = '" . $_POST["resolution"] . "'\nAND";
+	$query = $query . "c1.displayResPixels LIKE '" . $_POST["resolution"] . "%'\nAND";
 }
 if (!empty($_POST["user_input"])){
 	$query = $query . "c1.cellName LIKE '%" . $_POST["user_input"] . "%'\nAND";
