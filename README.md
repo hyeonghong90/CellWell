@@ -22,9 +22,9 @@ There are currently no smartphone databases tailored for the average smartphone 
 
 ### Solutions
 Cell Well is a cellphone website that will provide
-a more user-friendly interface and prevent going 
+a more user-friendly interface and prevent users from going 
 through multiple resources. There will be a simple 
-navigational strcture to the website covering all
+navigational structure to the website covering all
 facets of a smartphone user needs to find their ideal 
 phone. 
 
