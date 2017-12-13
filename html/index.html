@@ -9,6 +9,7 @@
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 
  	<script type="text/javascript">
 /*		$(function(){
@@ -34,7 +35,7 @@
 				$("#filler-msg").hide();
 				$("#search-again").fadeIn(1000);
 
-	        	// $("#search-form").trigger("reset");
+	        	$("#search-form").trigger("reset");
 	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
 
@@ -42,8 +43,12 @@
 	          {
 	          	user_input: $query
 	          }, function(data, status){
+<<<<<<< HEAD
             // $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
             alert(data + status);
+=======
+           			$("#query-confirm").html(data);
+>>>>>>> 663c6c0e6b68f4633299811dbfec552680575efd
           }
         );
 
@@ -63,9 +68,12 @@
 			// for when facets are clicked, sends data to php
 		$(document).ready (function() {
 			$("#brand-apple").click(function() {
+				$(".phones").fadeOut();
+
     			$.post("cellwell_master.php", { brand: "apple" }, function(data, status) {
-    					alert(data + status);
+    					$(".phones").html("<h1>Results for '" + $("#brand-apple").text() + "'</h1>" + data).fadeIn();
     				});
+
     			}
     		);
 			}
@@ -170,9 +178,10 @@
 
 		<section class="login-bar">
 			<div class="wrapper">
-				<p id="filler-msg">Cell Well is a database of smartphones tailored for submission to Myeong Lee.</p>
+				<div id="filler-msg"><img src="./img/lightbulb.png">
+					<p><i>Cell Well</i> is a database of smartphones tailored<br/> for submission to Myeong Lee.</p></div>
 				<div id="search-again">
-					<p>Results for query below.</p>
+					<p id="query-confirm"></p>
 				<button id="header-slider" type="button" class="sbutton">Search Again?</button>
 				</div>
 			</div>
@@ -234,27 +243,6 @@
 		<section class="phones">
 			<div class="wrapper">
 	      		<h1>New Releases</h1>
-
-	        <div class="phone">
-				<img src="./img/phone-imgs/iphonex.jpg">
-				<h3>iPhone X</h3>
-	        </div>
-
-	        <div class="phone">
-	         	<img src="./img/phone-imgs/iphone8.jpg">
-	         	<h3>iPhone 8</h3>
-	        </div>
-
-	        <div class="phone">
-	        	<img src="./img/phone-imgs/razer.jpg">
-	         	<h3>Razer</h3>
-	        </div>
-	      </div>
-    	</section>
-
-		<section class="phones">
-			<div class="wrapper">
-	      		<h1>Most Popular</h1>
 
 	        <div class="phone">
 				<img src="./img/phone-imgs/iphonex.jpg">
