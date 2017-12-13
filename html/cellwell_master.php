@@ -20,7 +20,7 @@ function query_to_db($conn, $sql){
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='wrapper'><a href='specs.html'><div class='phone' id='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div></a></div>";
+                echo "<div class='wrapper'><a href='specs.html' class='specs-link'><div class='phone' id='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div></a></div>";
             }
     		// echo "Your query was successful";
     	} else {

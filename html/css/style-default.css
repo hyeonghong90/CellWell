@@ -208,6 +208,11 @@ li .sub:hover {
   color: black;
 }
 
+.phone a {
+  color: black;
+  text-decoration: none;
+}
+
 .phones .phone img {
   width: 90px;
 }

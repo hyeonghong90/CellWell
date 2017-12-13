@@ -108,6 +108,14 @@
     			}
     		);
 
+    		$("#carrier-sprint").click(function() {
+    			$(".phones").fadeOut();
+    			$.post("cellwell_master.php", { carrier: "Sprint" }, function(data, status) {
+    					$(".phones").html("<h1>Results for '" + $("#carrier-sprint").text() + "'</h1>" + data).fadeIn();
+    				});
+    			}
+    		);
+
 
     		$("#display-6").click(function() {
     			$(".phones").fadeOut();
@@ -256,6 +264,7 @@
 					<li id="carrier-att" class="sub">AT&T</li>
 					<li id="carrier-tmobile" class="sub">T-Mobile</li>
 					<li id="carrier-verizon" class="sub">Verizon</li>
+					<li id="carrier-sprint" class="sub">Sprint</li>
 				</ul>
 			</li>
 			<li class="facet-list">
