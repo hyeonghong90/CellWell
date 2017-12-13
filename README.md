@@ -3,17 +3,12 @@ CellWell
 
 This is a repository for the Cell Well project from INST377 class, UMD.
 
-### Folder Structure
-
-#### html
-Any web-related materials such as PHP, Javascript, and SQL files are here. 
-This folder will be directly used on the server in the future.
-
 ### Participants
 - Nikoli Bolivar nbolivar@terpmail.umd.edu
 - Jae Keshawn    jmyers17@terpmail.umd.edu
 - Jan Christian  jancvsantos@gmail.com
 - Nathan Abbott  nathanabbott1993@gmail.com
+- Hyeong-gi      hhong17@terpmail.umd.edu
 
 ### Information Problem
 There are currently no smartphone databases tailored for the average smartphone buyer/user.
