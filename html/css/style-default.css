@@ -66,7 +66,7 @@ nav li a:hover {
   text-align:center;
   background-color: #00b58b;
   color: white;
-  border-bottom: #60515e 6px solid;
+  border-bottom: #60515e 1px solid;
   position: relative;
 }
 
@@ -104,6 +104,20 @@ nav li a:hover {
 #adv {
   color: white;
   font-size: 12px;
+}
+
+#filler-msg p {
+  font-size: 12px;
+  float: center;
+  margin-right: 380px;
+}
+
+#filler-msg img {
+  height: 50px;
+  width: 50px;
+  float: left;
+  margin-left: 370px;
+  margin-top: -10px;
 }
 
 .login-bar {
