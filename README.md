@@ -30,11 +30,11 @@ detailed phone specs into a simple user interface.
 
 ### Final Design Solution
 
-_Homepage:_
+**Homepage:**
 Displays the main components a smartphone user looks for when searching for the ideal phone.
 Ex. Phone Carriers, Brands, New Releases, Display Size, Operating System, Resolution
 
-_Remainder of Site Design Pages:_
+**Remainder of Site Design Pages:**
 Displays simplistic view of of the clicked reference by using large text and graphical guides.
 Other smartphone databases overload users with excess information that the average phone buyer
 does understand or care about. We will minimize that.
