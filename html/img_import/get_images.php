@@ -16,20 +16,22 @@ if (!$conn) {
 
 // A function to get corresponding cellID.
 function get_cell_id($conn, $manufacturer_name, $model_name){
-	$query = "SELECT cellID 
-	FROM cell_well.celldata
-	WHERE phoneMaker = '" . $manufacturer_name . "' AND cellName = '" . $model_name . "';";
+	$query = "SELECT cellID " . 
+	"FROM cell_well.celldata " . 
+	"WHERE phoneMaker = '" . $manufacturer_name . "' AND cellName = '" . $model_name . "';";
+
+	echo $query . "<br><br>";
 
 	$result = mysqli_query($conn, $query);
 
+	// print_r($result);
 	if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)) {
                 return $row["cellID"];
             }
-    		// echo "Your query was successful";
     	} else {
-    		echo "No result...";
+    		echo "No result...<br><br>";
     	}
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -47,7 +49,6 @@ function get_cell_id($conn, $manufacturer_name, $model_name){
 
 // A function to insert image path.
 function insert_img_path($conn, $img_path, $cell_id){
-	echo $img_path . "   /   " . $cell_id . "<br>";
 	$img_query = "INSERT INTO cell_well.pictures (picture_path, cellData_cellID)
 	VALUES ('" . $img_path . "', '" . $cell_id . "');";
 
@@ -55,7 +56,7 @@ function insert_img_path($conn, $img_path, $cell_id){
 }
 
 // Code starts here.
-// $dir_path = "/var/www/html/img/phone-imgs/";
+// $dir_path = "img/phone-imgs/googlke.jpg";
 $dir_path = "C:/git/CellWell/html/img/phone-imgs/";
 
 $files = scandir($dir_path);
@@ -74,6 +75,7 @@ foreach ($files as $file){
 
 		//
 		$cell_id_fk = get_cell_id($conn, $manufacturer_name, $model_name);
+		// echo $cell_id_fk . "<br>";
 
 		// get corresponding image path.
 		$img_path = "'img/phone-imgs/" . $file . "'";
