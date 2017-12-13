@@ -36,7 +36,6 @@
 	          	user_input: $query
 	          }, function(data, status){
             $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
-            // $("#message").text(data);
           }
         );
 	        	return false;
@@ -47,12 +46,18 @@
 		$(document).ready (function() {
 
 			$("#brand-apple").click(function() {
-    			var $value = $(this).attr("id");
-			console.log($value);
-    			alert($value);
-    		});
 
-		})
+    			$.post("cellwell_master.php",
+    				{ brand: "apple" }, function(data, status) {
+    					alert(data + status);
+    				});
+
+
+    			}
+    		);
+
+			}
+		);
 
 			// test function for clicking facets
 		function facetClick() {
