@@ -52,7 +52,7 @@ if (!empty($_POST["carrier"])){
 	$query = $query . "c5.carrierName = '" . $_POST["carrier"] . "'\nAND";
 }
 if (!empty($_POST["display_size"])){
-	$query = $query . "c1.displaySizeInches = '" . $_POST["display_size"] . "'\nAND";
+	$query = $query . "c1.displaySizeInches LIKE '" . $_POST["display_size"] . "%'\nAND";
 }
 if (!empty($_POST["os"])){
 	$query = $query . "c1.os = '" . $_POST["os"] . "'\nAND";
