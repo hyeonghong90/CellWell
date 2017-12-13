@@ -20,7 +20,7 @@ function query_to_db($conn, $sql){
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)) {
-                echo $row["phoneMaker"];
+                echo $row["phoneMaker"] . " " . $row["cellName"] . "<br>";
             }
     		// echo "Your query was successful";
     	} else {
@@ -32,11 +32,13 @@ function query_to_db($conn, $sql){
 }
 
 // Creating a query
-$query = "SELECT * FROM celldata as c1
-JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
-JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
-JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
-JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
+// $query = "SELECT * FROM celldata as c1
+// JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
+// JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
+// JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
+// JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
+
+$query = "SELECT * FROM celldata as c1\n";
 
 // Adding conditions based on the user query
 if (strpos($query, 'WHERE') == false){
@@ -58,7 +60,7 @@ if (!empty($_POST["resolution"])){
 	$query = $query . "c1.displaySizeInches = " . $_POST["resolution"] . "\nAND";
 }
 if (!empty($_POST["user_input"])){
-	$query = $query . "c1.cellName = '" . $_POST["user_input"] . "'\nAND";
+	$query = $query . "c1.cellName LIKE '%" . $_POST["user_input"] . "%'\nAND";
 }
 
 // removing last "AND"
