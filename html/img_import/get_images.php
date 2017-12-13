@@ -20,7 +20,7 @@ function get_cell_id($conn, $manufacturer_name, $model_name){
 	"FROM cell_well.celldata " . 
 	"WHERE phoneMaker = '" . $manufacturer_name . "' AND cellName = '" . $model_name . "';";
 
-	echo $query . "<br><br>";
+	// echo $query . "<br><br>";
 
 	$result = mysqli_query($conn, $query);
 
@@ -50,7 +50,9 @@ function get_cell_id($conn, $manufacturer_name, $model_name){
 // A function to insert image path.
 function insert_img_path($conn, $img_path, $cell_id){
 	$img_query = "INSERT INTO cell_well.pictures (picture_path, cellData_cellID)
-	VALUES ('" . $img_path . "', '" . $cell_id . "');";
+	VALUES ('" . $img_path . "', " . $cell_id . ");";
+
+	echo $img_query . "<br><br>";
 
 	mysqli_query($conn, $img_query);
 }
@@ -74,11 +76,10 @@ foreach ($files as $file){
 		// split('[_]', $phone[0])[1];
 
 		//
-		$cell_id_fk = get_cell_id($conn, $manufacturer_name, $model_name);
-		// echo $cell_id_fk . "<br>";
+		$cell_id_fk = intval(get_cell_id($conn, $manufacturer_name, $model_name));
 
 		// get corresponding image path.
-		$img_path = "'img/phone-imgs/" . $file . "'";
+		$img_path = "img/phone-imgs/" . $file;
 
 		// inserting the path.
 		insert_img_path($conn, $img_path, $cell_id_fk);
