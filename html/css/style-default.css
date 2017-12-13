@@ -195,6 +195,14 @@ li .sub:hover {
   color: black;
 }
 
+.phones .phone h3 {
+  font-size: 12px;
+  border: #b197ac 1px solid;
+  padding: 2px;
+  width: 80%;
+  margin-left: 15px;
+}
+
 .phones h1 {
   text-align: center;
   color: black;
