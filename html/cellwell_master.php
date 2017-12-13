@@ -31,21 +31,21 @@ function query_to_db($conn, $sql){
     }
 }
 
-<<<<<<< HEAD
+
 // Creating a query
 // $query = "SELECT * FROM celldata as c1
 // JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 // JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 // JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 // JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
-=======
+
 /*// Creating a query
 $query = "SELECT * FROM celldata as c1
 JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";*/
->>>>>>> 663c6c0e6b68f4633299811dbfec552680575efd
+
 
 $query = "SELECT * FROM celldata as c1\n";
 
