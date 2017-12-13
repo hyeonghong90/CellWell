@@ -17,12 +17,13 @@ if (!$conn) {
 // A function for general queries.
 function query_to_db($conn, $sql){
     $result = mysqli_query($conn, $sql);
-
     if ($result) {   
-    	if (!empty($result)){
-    		echo "Your query was successful";
-    	}
-    	else {
+    	if (mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)) {
+                echo $row["phoneMaker"];
+            }
+    		// echo "Your query was successful";
+    	} else {
     		echo "No result...";
     	}
     } else {
@@ -38,7 +39,7 @@ JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID\n";
 
 // Adding conditions based on the user query
-if (!$query.includes("WHERE")){
+if (strpos($query, 'WHERE') == false){
 	$query = $query . "WHERE ";
 }
 if (!empty($_POST["brand"])){
@@ -61,11 +62,11 @@ if (!empty($_POST["user_input"])){
 }
 
 // removing last "AND"
-if (substr($query, 0, -2) == "AND") {
-	$query = substr($query, 0, -2);
+if (substr($query, -3, 3) == "AND") {
+	$query = substr($query, 0, -3);
 }
 
-$query = $query . "ORDER BY c1.phoneMaker and c1.cellName;";
+$query = $query . "\nORDER BY c1.phoneMaker AND c1.cellName;";
 query_to_db($conn, $query);
 
 mysqli_close($conn);
