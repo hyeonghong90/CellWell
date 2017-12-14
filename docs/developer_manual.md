@@ -21,7 +21,7 @@ This document explains how to launch the CellWell webpage using various systems,
 	
 	System Directions: 
 	- Ensure these versions are running on your MAC OSX, Windows, and Linux systems 
-	to effectively use your PC as a server to test code. 
+	  to effectively use your PC as a server to test code. 
 	- Direct the web server doument root to Cell Well file folder containing all project files.
 	
 **Install IDE** <br> <br>
