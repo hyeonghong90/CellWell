@@ -76,6 +76,7 @@ This document explains how to launch the Cell Well webpage using various systems
 		- HTML and JQuery code for advanced search facet of webpage.<br><br>
 	specs.html:<br>
 		-???????<br><br>
+		
 	System Notes:	
 	Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
