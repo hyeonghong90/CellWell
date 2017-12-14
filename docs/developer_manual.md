@@ -79,5 +79,24 @@ This document explains how to launch the Cell Well webpage using various systems
 	System Notes:	
 	Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
-## Code Structure and Logic: <br>
+## Code Structure and Logic: <br><br>
+cellwell_master.php file : <br>
+		- Ensures server is running and database is connected. <br>
+		- Query connecting webpage features to aspects of database. <br> <br>
+	css Folder: <br>
+		- Consists of two CSS files of webpage design. <br> <br>
+	db Folder: <br>
+		- Consits of MySQL script containing database of all of the featured cell phones. <br><br>
+	img Folder: <br>
+		- Contains all of the images used for webpage. <br>
+		- Includes phone-imgs folder that holds all of the images of every phone listen in the database.<br><br>
+	index.html file: <br>
+		- Consits of HTML, JavaScript, and JQuery code implementing all aspects of our webpage. <br><br>
+	image_import Folder: <br>
+		- Contains a get_images.php file that gets the images from phone-imgs folder<br>
+		  and assigns them to the phones from database on webpage.<br><br>
+	advanced_search.html:<br>
+		- HTML and JQuery code for advanced search facet of webpage.<br><br>
+	specs.html:<br>
+		-???????<br><br>
 
