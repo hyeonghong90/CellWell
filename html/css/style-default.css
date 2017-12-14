@@ -227,11 +227,6 @@ li .sub:hover {
   color: black;
 }
 
-.phone a {
-  color: black;
-  text-decoration: none;
-}
-
 .phones .phone img {
   width: 90px;
 }
@@ -259,4 +254,65 @@ li .sub:hover {
   margin-left: 150px;
   padding: 10px;
   margin-bottom: 5px;
+
+.facetsAD {
+    float: left;
+    margin-top: 10px;
+    margin-left: 30px;
+    display: inline-table;
+}
+/*.facetsAD li.facet-listAD {
+     display: inline-block;
+    width: 40%;
+    height: 30%;
+    border: 1px black solid;
+    background: aliceblue;   
+    vertical-align:top;
+}*/
+
+
+.facetsAD li.facet-listAD {
+    color: black;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 120px;
+    padding: 18px;
+    width: 1000px;
+    text-align: left;
+    list-style-type: none;
+    border: 1 #b197ac 1px solid;
+    font-size: 15px;
+    transition: 0.5s;
+    color: #60515e;
+    font-family: "Roboto", sans-serif;
+    border-radius: 10px;    
+}
+
+.fecetsAD ul.facet-listAD{
+  display: inline-block;
+}
+
+
+.facetsAD li.facet-listAD:hover {
+  background-color: #60515e;
+  color: white;
+  font-weight: bold;
+  display:  inline-block;
+}
+
+.selected-filters {
+    color: black;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 120px;
+    padding: 18px;
+    width: 750px;
+    text-align: left;
+    /*list-style-type: none;*/
+    border: 1 #b197ac 1px solid;
+    font-size: 15px;
+    transition: 0.5s;
+    color: #60515e;
+    font-family: "Roboto", sans-serif;
+    border-radius: 10px;
 }
