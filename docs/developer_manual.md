@@ -86,7 +86,7 @@ This document explains how to launch the CellWell webpage using various systems,
 **cellwell_master.php file :** <br>
 		- PHP code establishing a connection between the database and server. <br>
 		- A while that loops through the entire database and checks it to the user's general query <br>
-		- A query connecting cell <br> <br>
+		- A query connecting cellbands, carriers, cellIDs, and cellData to several variations of possible user queries. <br> <br>
 	css Folder: <br>
 		- Consists of two CSS files of webpage design. <br> <br>
 	db Folder: <br>
