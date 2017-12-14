@@ -1,4 +1,5 @@
-<h10 style="text-align: center;" markdown="1">Developer's Manual Cell Well</h10>
+Developer's Manual Cell Well 
+======
 
 ![alt text](https://farm5.staticflickr.com/4551/39045365031_78cc1a8b79_m.jpg "Logo Title Text 1")
 
