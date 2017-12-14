@@ -22,7 +22,7 @@ function query_to_db($conn, $sql){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
                 foreach ($row as $r){
-                    echo "<div class='phone' value='" . $r . "'><h3>" . $r . "</h3></div>";
+                    echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . $r . "</h3></div>";
                 } 
             }
             echo "</div>";
