@@ -1,8 +1,9 @@
-Developer's Manual Cell Well
-======
-[logo]: Screen_Shot_2017_12_14_at_2_17_31_AM.png"Logo Title Text 2"
+CellWell Developer's Manual
+=======
 
-This document explains how to launch the Cell Well webpage using various systems, as well as explains the file and code structure used to create it.
+![alt text](https://farm5.staticflickr.com/4551/39045365031_78cc1a8b79_m.jpg "Logo Title Text 1")
+
+This document explains how to launch the CellWell webpage using various systems, as well as explains the file and code structure used to create it.
 
 ## Setting Up:
 
@@ -16,7 +17,7 @@ This document explains how to launch the Cell Well webpage using various systems
  	• MySQL 5.6.35 <br>
 	• PHP 5.6.29, 5.6.30, 7.0.14, 7.0.15 & 7.1.1 <br>
 	• Python 2.7.13 <br>
-   	• phpMyAdmin 4.6.5.2 <br><br>
+   	• phpMyAdmin 4.6.5.2 <br>
 	
 	System Directions: 
 	- Ensure these versions are running on your MAC OSX, Windows, and Linux systems 
@@ -35,7 +36,7 @@ This document explains how to launch the Cell Well webpage using various systems
 	•VI/VIM/NANO (command-line editors) <br>
 	
 	System Directions: 
-	Use Sublime Text and Command-line editors/terminals for this code 
+	-Use Sublime Text and Command-line editors/terminals for this code.
 	
 **Database Monitor/Manager** <br><br>
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
@@ -48,14 +49,57 @@ This document explains how to launch the Cell Well webpage using various systems
 	• Generate DB schema <br>
 	
 	System Directions: 
-	Create new cell well schema and run cellwell_20171213_5.sql script on workbench. 
+	-Create new cell well schema and run cellwell_20171213_5.sql script on workbench. 
 	
 **Software/Libraries Used** <br>
 	• JQuery <br>
 	• Bootstrap <br>
 	
-## File Structure <br> <br>
-
-
+## File Structure: <br> <br>
+![alt text](https://farm5.staticflickr.com/4737/24184158367_8f9d4416be_z.jpg "Logo Title Text 1") <br>
+	**cellwell_master.php file :** <br>
+		- Ensures server is running and database is connected. <br>
+		- Query connecting webpage features to aspects of database. <br> <br>
+	**css Folder:** <br>
+		- Consits of style-default.css file that contains the code that corresponds to the layout  <br>
+	 	  fonts, color, and general styling of the page. <br><br>
+	**db Folder:** <br>
+		- Consits of MySQL script containing database of all of the featured cell phones. <br><br>
+	**img Folder:** <br>
+		- Contains all of the images used for webpage buttons and animations. <br>
+		- Includes phone-imgs folder that holds all of the images of every phone listen in the database.<br><br>
+	**index.html file:** <br>
+		- Consits of HTML, JavaScript, and JQuery code implementing all aspects of our webpage. <br><br>
+	**image_import Folder:** <br>
+		- Contains a get_images.php file that gets the images from phone-imgs folder<br>
+		  and assigns them to the phones from database on webpage.<br><br>
+	**advanced_search.html:**<br>
+		- HTML and JQuery code for advanced search facet of webpage.<br><br>
+	**specs.html:**<br>
+		- HTML and JQuery code created to assigned detailed specifications from database to their <br>
+		  corresponding phone on the webpage.<br>
+		
+	System Notes:	
+	Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
-	
+## Code Structure and Logic: (NOT LEGIT, NEED TO TALK TO GROUP/MYEONG FIRST)<br><br>
+cellwell_master.php file : <br>
+		- Ensures server is running and database is connected. <br>
+		- Query connecting webpage features to aspects of database. <br> <br>
+	css Folder: <br>
+		- Consists of two CSS files of webpage design. <br> <br>
+	db Folder: <br>
+		- Consits of MySQL script containing database of all of the featured cell phones. <br><br>
+	img Folder: <br>
+		- Contains all of the images used for webpage. <br>
+		- Includes phone-imgs folder that holds all of the images of every phone listen in the database.<br><br>
+	index.html file: <br>
+		- Consits of HTML, JavaScript, and JQuery code implementing all aspects of our webpage. <br><br>
+	image_import Folder: <br>
+		- Contains a get_images.php file that gets the images from phone-imgs folder<br>
+		  and assigns them to the phones from database on webpage.<br><br>
+	advanced_search.html:<br>
+		- HTML and JQuery code for advanced search facet of webpage.<br><br>
+	specs.html:<br>
+		-???????<br><br>
+
