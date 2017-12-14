@@ -16,10 +16,10 @@ This document explains how to launch the Cell Well webpage using various systems
 	• Python 2.7.13 <br>
    	• phpMyAdmin 4.6.5.2 <br><br>
 	
-	System Directions: <br>
-	- Ensure these versions are running on your MAC OSX, Windows, and Linux systems <br>
-	to effectively use your PC as a server to test code. <br> 
-	- Direct the web server doument root to Cell Well file folder. <br>
+	System Directions: 
+	- Ensure these versions are running on your MAC OSX, Windows, and Linux systems 
+	to effectively use your PC as a server to test code. 
+	- Direct the web server doument root to Cell Well file folder.
 	<br>
 **Install IDE** <br> <br>
 	1.) *Install an IDE that supports your code:* <br>
@@ -32,9 +32,9 @@ This document explains how to launch the Cell Well webpage using various systems
 	•Notepad (?) <br>
 	•VI/VIM/NANO (command-line editors) <br>
 	
-	System Directions: <br>
-	Use Sublime Text and Command-line editors/terminals for this code <br>
-	<br>
+	System Directions: 
+	Use Sublime Text and Command-line editors/terminals for this code 
+	
 **Database Monitor/Manager** <br><br>
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
 	1.) *Install MySQL Workbench:* <br>
@@ -45,7 +45,7 @@ This document explains how to launch the Cell Well webpage using various systems
 	• Write Queries <br>
 	• Generate DB schema <br>
 	
-	System Directions: <br>
+	System Directions: 
 	Create new cell well schema and run cellwell_20171213_5.sql script on workbench. <br>
 	
 **Software/Libraries Used** <br>
