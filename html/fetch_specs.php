@@ -16,6 +16,9 @@ if (!$conn) {
 
 // A function for general queries.
 function query_to_db($conn, $sql){
+
+	echo $sql . "<br><br>";
+
     $result = mysqli_query($conn, $sql);
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
@@ -60,8 +63,8 @@ JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID
-JOIN pictures as pic ON c1.cellID = pic.cellData_cellID\n
-WHERE c1.cellName = '" . $model_name . "'\n
+JOIN pictures as pic ON c1.cellID = pic.cellData_cellID
+WHERE c1.cellName = '" . $model_name . "' 
 ORDER BY c1.cellName;";
 
 query_to_db($conn, $query);
