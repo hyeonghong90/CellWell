@@ -88,9 +88,9 @@ This document explains how to launch the CellWell webpage using various systems,
 		- A while that loops through the entire database and checks it to the user's general query <br>
 		- A query connecting cellbands, carriers, cellIDs, and cellData to several variations of possible user queries. <br> <br>
 	**style-default.css:**<br>
-		- Structural CSS code designing the layout of webpage from top to bottom including the homepage, advanced search page, and phone display pages. <br> <br>
+		- Structural CSS code designing the layout of webpage from top to bottom including the homepage, advanced search page,  		  and phone display pages. <br> <br>
 	**index.html file:** <br>
-		- Consits of HTML, JavaScript, and JQuery code implementing all of the quick access tabs to communicate with the 			  database, query the necessary content, and post query results. <br><br>
+		- Consits of HTML, JavaScript, and JQuery code implementing all of the quick access tabs to communicate with the 			   database, query the necessary content, and post query results. <br><br>
 	**get_images.php**: <br>
 		- PHP code that gets the cellID and inserts the corresponding image by its image path, manufacturer name,and model name.   		 <br><br>
 	**advanced_search.html:**<br>
