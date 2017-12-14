@@ -21,7 +21,9 @@ function query_to_db($conn, $sql){
     	if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div>";
+                foreach ($row as $r){
+                    echo "<div class='phone' value='" . $row[$r] . "'><h3>" . $row[$r] . "</h3></div>";
+                } 
             }
             echo "</div>";
     		// echo "Your query was successful";
@@ -41,7 +43,7 @@ JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID
 JOIN pictures as pic ON c1.cellID = pic.cellData_cellID\n";
 
-$query = "SELECT * FROM celldata as c1\n";
+// $query = "SELECT * FROM celldata as c1\n";
 
 // Adding conditions based on the user query
 if (strpos($query, 'WHERE') == false){
