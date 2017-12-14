@@ -9,7 +9,7 @@ This document explains how to launch the CellWell webpage using various systems,
 
 **Install Local Environment MAMP (for MacOS and Windows users)**<br> <br>
 	1.)  *Download:* <br>
-		* • MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
+		 	 • MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
  	• MAMP & MAMP PRO 3.3.1 (Windows) <br>
 	• https://www.mamp.info/en/downloads/ <br>
 	• LAMP [Linux, Apache, MySQL, PHP] (Ubuntu) <br> <br>
