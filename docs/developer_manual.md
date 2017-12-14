@@ -9,7 +9,7 @@ This document explains how to launch the CellWell webpage using various systems,
 
 **Install Local Environment MAMP (for MacOS and Windows users)**<br> <br>
 	1.)  *Download:* <br>
-		 	 * • MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
+	• MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
  	• MAMP & MAMP PRO 3.3.1 (Windows) <br>
 	• https://www.mamp.info/en/downloads/ <br>
 	• LAMP [Linux, Apache, MySQL, PHP] (Ubuntu) <br> <br>
@@ -89,14 +89,9 @@ This document explains how to launch the CellWell webpage using various systems,
 		- A query connecting cellbands, carriers, cellIDs, and cellData to several variations of possible user queries. <br> <br>
 	**style-default.css:**<br>
 		- Structural CSS code designing the layout of webpage from top to bottom. <br> <br>
-	db Folder: <br>
-		- Consits of MySQL script containing database of all of the featured cell phones. <br><br>
-	img Folder: <br>
-		- Contains all of the images used for webpage. <br>
-		- Includes phone-imgs folder that holds all of the images of every phone listen in the database.<br><br>
-	index.html file: <br>
+	**index.html file:** <br>
 		- Consits of HTML, JavaScript, and JQuery code implementing all aspects of our webpage. <br><br>
-	image_import Folder: <br>
+	**get_images.php**: <br>
 		- Contains a get_images.php file that gets the images from phone-imgs folder<br>
 		  and assigns them to the phones from database on webpage.<br><br>
 	advanced_search.html:<br>
