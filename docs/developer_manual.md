@@ -79,7 +79,7 @@ This document explains how to launch the Cell Well webpage using various systems
 	System Notes:	
 	Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
-## Code Structure and Logic: <br><br>
+## Code Structure and Logic: (NOT LEGIT, NEED TO TALK TO GROUP/MYEONG FIRST)<br><br>
 cellwell_master.php file : <br>
 		- Ensures server is running and database is connected. <br>
 		- Query connecting webpage features to aspects of database. <br> <br>
