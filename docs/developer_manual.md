@@ -79,4 +79,5 @@ This document explains how to launch the Cell Well webpage using various systems
 	System Notes:	
 	Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
-### Code Structure and Logic: <br>
+## Code Structure and Logic: <br>
+
