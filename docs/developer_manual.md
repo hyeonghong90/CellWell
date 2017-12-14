@@ -35,17 +35,17 @@ This document explains how to launch the Cell Well webpage using various systems
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
 	1.) *Install MySQL Workbench:* <br>
 	https://dev.mysql.com/downloads/workbench/ <br><br>
-	Features:
+	Features: <br>
  	• DB dump/import <br>
 	• Create/alter/delete/update DB and DB tables <br>
 	• Write Queries <br>
 	• Generate DB schema <br>
 	Create new cell well schema and run cellwell_20171213_5 script on workbench. <br>
 	
-**Software/Libraries Used** <br><br>
+**Software/Libraries Used** <br>
 	• JQuery <br>
-	• Bootstrap
-	
+	• Bootstrap <br>
+### File Structure <br> <br>
 
 	
 	
