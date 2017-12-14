@@ -16,7 +16,7 @@ Developer's Manual Cell Well
    	• phpMyAdmin 4.6.5.2 <br>
 	- Ensure these versions are running on your MAC OSX, Windows, and Linux systems <br>
 	to effectively use your PC as a server to test code. <br> 
-	- Direct the web server doument root to Cell file folder. <br>
+	- Direct the web server doument root to Cell Well file folder. <br>
 	<br>
 **Install IDE** <br>
 	1.) *Install an IDE that supports your code:* <br>
