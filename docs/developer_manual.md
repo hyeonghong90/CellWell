@@ -82,13 +82,13 @@ This document explains how to launch the CellWell webpage using various systems,
 	System Notes:	
 	- Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
-## Code Structure and Logic: (NOT LEGIT, NEED TO TALK TO GROUP/MYEONG FIRST)<br><br>
+## Code Structure and Logic:<br><br>
 **cellwell_master.php file :** <br>
 		- PHP code establishing a connection between the database and server. <br>
 		- A while that loops through the entire database and checks it to the user's general query <br>
 		- A query connecting cellbands, carriers, cellIDs, and cellData to several variations of possible user queries. <br> <br>
-	css Folder: <br>
-		- Consists of two CSS files of webpage design. <br> <br>
+	**style-default.css:**<br>
+		- Structural CSS code designing the layout of webpage from top to bottom. <br> <br>
 	db Folder: <br>
 		- Consits of MySQL script containing database of all of the featured cell phones. <br><br>
 	img Folder: <br>
