@@ -57,25 +57,25 @@ This document explains how to launch the CellWell webpage using various systems,
 	
 ## File Structure: <br> <br>
 ![alt text](https://farm5.staticflickr.com/4737/24184158367_8f9d4416be_z.jpg "Logo Title Text 1") <br>
-	**cellwell_master.php file** : <br>
+	**cellwell_master.php file :** <br>
 		- Ensures server is running and database is connected. <br>
 		- Query connecting webpage features to aspects of database. <br> <br>
-	css Folder: <br>
+	**css Folder:** <br>
 		- Consits of style-default.css file that contains the code that corresponds to the layout  <br>
 	 	  fonts, color, and general styling of the page. <br><br>
-	db Folder: <br>
+	**db Folder:** <br>
 		- Consits of MySQL script containing database of all of the featured cell phones. <br><br>
-	img Folder: <br>
+	**img Folder:** <br>
 		- Contains all of the images used for webpage buttons and animations. <br>
 		- Includes phone-imgs folder that holds all of the images of every phone listen in the database.<br><br>
-	index.html file: <br>
+	**index.html file:** <br>
 		- Consits of HTML, JavaScript, and JQuery code implementing all aspects of our webpage. <br><br>
-	image_import Folder: <br>
+	**image_import Folder:** <br>
 		- Contains a get_images.php file that gets the images from phone-imgs folder<br>
 		  and assigns them to the phones from database on webpage.<br><br>
-	advanced_search.html:<br>
+	**advanced_search.html:**<br>
 		- HTML and JQuery code for advanced search facet of webpage.<br><br>
-	specs.html:<br>
+	**specs.html:**<br>
 		- HTML and JQuery code created to assigned detailed specifications from database to their <br>
 		  corresponding phone on the webpage.<br>
 		
