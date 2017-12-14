@@ -36,7 +36,7 @@ This document explains how to launch the Cell Well webpage using various systems
 	•VI/VIM/NANO (command-line editors) <br>
 	
 	System Directions: 
-	-Use Sublime Text and Command-line editors/terminals for this code 
+	-Use Sublime Text and Command-line editors/terminals for this code.
 	
 **Database Monitor/Manager** <br><br>
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
@@ -58,5 +58,7 @@ This document explains how to launch the Cell Well webpage using various systems
 ## File Structure <br> <br>
 ![alt text](https://farm5.staticflickr.com/4737/24184158367_8f9d4416be_z.jpg "Logo Title Text 1") <br>
 	cellwell_master.php : <br>
-		- Ensures server is running and database is connected, Webpage query structure
-	
+		- Ensures server is running and database is connected. <br>
+		- Query connected webpage feature to aspects of database. <br>
+	Css Folder: <br>
+		- Consists of CSS files of webpage design
