@@ -84,7 +84,8 @@ This document explains how to launch the CellWell webpage using various systems,
 	
 ## Code Structure and Logic: (NOT LEGIT, NEED TO TALK TO GROUP/MYEONG FIRST)<br><br>
 cellwell_master.php file : <br>
-		- Ensures server is running and database is connected. <br>
+		- PHP code establishing a connection between the database and server. <br>
+		- A while that loops through the entire database and checks it to the user's general query <br>
 		- Query connecting webpage features to aspects of database. <br> <br>
 	css Folder: <br>
 		- Consists of two CSS files of webpage design. <br> <br>
