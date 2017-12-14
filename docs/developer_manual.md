@@ -45,7 +45,8 @@ This document explains how to launch the Cell Well webpage using various systems
 **Software/Libraries Used** <br>
 	• JQuery <br>
 	• Bootstrap <br>
-### File Structure <br> <br>
+## File Structure <br> <br>
+
 
 	
 	
