@@ -23,17 +23,19 @@ This document explains how to launch the Cell Well webpage using various systems
 **Install IDE** <br>
 	1.) *Install an IDE that supports your code:* <br>
 	• Sublime Text <br>
+	https://www.sublimetext.com/3 <br>
 	• Eclipse <br>	
 	• Ultra Edit <br>
 	• PyCharm (Python) <br>
 	•Jupyter (Python and R) <br>
 	•Notepad (?) <br>
 	•VI/VIM/NANO (command-line editors) <br>
-	Sublime Text and Command-line editors are ideal for this code. <br>
+	Sublime Text and Command-line editors are ideal for this code <br>
 	<br>
 **Database Monitor/Manager** <br>
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
 	1.) *Install MySQL Workbench to:* <br>
+	https://dev.mysql.com/downloads/workbench/
  	• DB dump/import <br>
 	• Create/alter/delete/update DB and DB tables <br>
 	• Write Queries <br>
