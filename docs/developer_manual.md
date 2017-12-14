@@ -1,5 +1,6 @@
 Developer's Manual Cell Well
 ======
+This document explains how to launch the Cell Well webpage using various systems, as well as explains the file and code structure used to create it.
 
 ## Setting Up:
 
@@ -37,6 +38,10 @@ Developer's Manual Cell Well
 	• Write Queries <br>
 	• Generate DB schema <br>
 	Create new cell well schema and run cellwell_20171213_5 script on workbench. <br>
+	
+**Software/Libraries Used** <br>
+	• JQuery
+	• Bootstrap
 	
 
 	
