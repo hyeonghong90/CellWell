@@ -30,21 +30,12 @@
 				var $phone = $(this).attr('value');
 				$(".phones").html("<h1>" + $phone + " Specs</h1>").fadeIn();
 
-<<<<<<< HEAD
-   //  			$.post("cellwell_master.php", { model_name: $phone }, function(data, status) {
-   //  					alert(data);
-   //  				}
-   //  			);
-			// }
-			// );
-=======
     			$.post("cellwell_master.php", { model_name: $phone }, function(data, status) {
     					alert(data);
     				}
     			);
 			}
 			);
->>>>>>> 0edf93b01c95f695d60b76339e1149c5f7e0c9a7
 			
 			$("#search-again").hide();
 

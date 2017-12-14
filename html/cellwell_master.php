@@ -65,6 +65,9 @@ if (!empty($_POST["resolution"])){
 if (!empty($_POST["user_input"])){
 	$query = $query . "c1.cellName LIKE '%" . $_POST["user_input"] . "%'\nAND";
 }
+if (!empty($_POST["model_name"])){
+    $query = $query . "c1.cellName = '" . $_POST["model_name"] . "'\nAND";
+}
 
 // removing last "AND"
 if (substr($query, -3, 3) == "AND") {
