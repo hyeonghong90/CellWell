@@ -10,24 +10,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
  	<script type="text/javascript">
-/*		$(function(){
-			$('li:has(ul)').click(function(event) {
-					if (this == event.target) {
-						$(this).children().toggle("fast");
-					}
-					return false;
-				})
-
-				.children().hide();
-		});*/
-
 		$(document).ready (function() {
 
-			$(".phone").click(function() {
-					$(".phone").attr('href','specs.html')
-				}
+			$(function(){
+				$('li:has(ul)').click(function(event) {
+						if (this == event.target) {
+							$(this).children().toggle("fast");
+						}
+						return false;
+					})
+
+					.children().hide();
+			});
+
+			$(document).on('click','.phone',function() {
+				var $phone = $(this).attr('value');
+				$(".phones").html("<h1>" + $phone + " Specs</h1>").fadeIn();
+
+/*    			$.post("cellwell_master.php", { model_name: $phone }, function(data, status) {
+    					alert(data);
+    				}
+    			);*/
+			}
 			);
 			
 			$("#search-again").hide();
@@ -43,7 +50,8 @@
 
 
         	$.post("cellwell_master.php", { user_input: $query }, function(data, status) {
-           			$("#query-confirm").html(data);
+           			$("#query-confirm").html("Query received!");
+           			$(".phones").html("<h1>Results for '" + $query + "'</h1>" + data).fadeIn();
           	}
         );
 	        	return false;
@@ -222,7 +230,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
        			<!-- Put post method here -->
        			<form id="search-form">
-          			<input type="text" placeholder="Type model name..." class="search" id="search-query" method="POST">
+          			<input type="text" placeholder="Type model or maker name..." class="search" id="search-query" method="POST">
           			<a href="results.html"><button type="submit" class="sbutton" id="search-submit">Search</button></a>
        			</form>
        			<p id="message"></p>
@@ -237,13 +245,9 @@
 					<p><i>Cell Well</i> is a database of smartphones tailored<br/> for submission to Myeong Lee.</p></div>
 				<div id="search-again">
 					<p id="query-confirm"></p>
-				<button id="header-slider" type="button" class="sbutton">Search Again?</button>
+				<button id="header-slider" type="button" class="sbutton">Search Again</button>
 				</div>
 			</div>
-
-<!-- 			<div class="login-opt">
-				<input type="checkbox" ="remember">Remember Me
-			</div> -->
 		</section>
 
 		<section class="facets">
@@ -300,17 +304,17 @@
 			<div class="wrapper">
 	      		<h1>New Releases</h1>
 
-	        <div class="phone">
+	        <div class="phone" value="Apple iPhone X">
 				<img src="./img/phone-imgs/iphonex.jpg">
-				<a class="specs-link" href='specs.html'><h3>iPhone X</h3>
+				<h3>iPhone X</h3>
 	        </div>
 
-	        <div class="phone">
+	        <div class="phone" value="Apple iPhone 8">
 	         	<img src="./img/phone-imgs/iphone8.jpg">
 	         	<h3>iPhone 8</h3>
 	        </div>
 
-	        <div class="phone">
+	        <div class="phone" value="Razer">
 	        	<img src="./img/phone-imgs/razer.jpg">
 	         	<h3>Razer</h3>
 	        </div>

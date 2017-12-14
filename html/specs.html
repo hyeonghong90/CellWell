@@ -3,7 +3,7 @@
 	<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Cell Well</title>
+    <title>Cell Well - Specs</title>
     <link rel="stylesheet" href="./css/style-default.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -25,154 +25,11 @@
 
 		$(document).ready (function() {
 
-			$(".phone").click(function() {
-					$(".phone").attr('href','specs.html')
-				}
-			);
-			
-			$("#search-again").hide();
-
-    		$(document).on("click", "#search-submit", function() {
-	        	var $query = $("#search-query").val();
-				$("#intro").slideUp();
-				$("#filler-msg").hide();
-				$("#search-again").fadeIn(1000);
-
-	        	$("#search-form").trigger("reset");
-	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
-
-
-        	$.post("cellwell_master.php", { user_input: $query }, function(data, status) {
-           			$("#query-confirm").html(data);
-          	}
-        );
-	        	return false;
-    		}
-    	);
-
     		$("#header-slider").click(function() {
     			$("#intro").slideDown();
     			$("#filler-msg").fadeIn(1000);
     			$("#search-again").hide();
     		});
-
-    		$("#brand-apple").click(function() {
-				$(".phones").fadeOut();
-
-    			$.post("cellwell_master.php", { brand: "apple" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#brand-apple").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#brand-samsung").click(function() {
-				$(".phones").fadeOut();
-
-    			$.post("cellwell_master.php", { brand: "samsung" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#brand-samsung").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#brand-sony").click(function() {
-				$(".phones").fadeOut();
-
-    			$.post("cellwell_master.php", { brand: "sony" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#brand-sony").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#carrier-att").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { carrier: "AT&T" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#carrier-att").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		// this ain't working for some reason
-    		$("#carrier-tmobile").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { carrier: "T-Mobile" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#carrier-tmobile").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#carrier-verizon").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { carrier: "Verizon" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#carrier-verizon").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-
-    		$("#display-6").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { display_size: "6" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#display-6").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#display-5").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { display_size: "5" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#display-5").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#display-4").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { display_size: "4" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#display-4").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#os-android").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { os: "android" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#os-android").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#os-ios").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { os: "ios" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#os-ios").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#res-720x1280").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { resolution: "720" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#res-720x1280").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#res-1080").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { resolution: "1080" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#res-1080").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
-    		$("#res-1440").click(function() {
-    			$(".phones").fadeOut();
-    			$.post("cellwell_master.php", { resolution: "1440" }, function(data, status) {
-    					$(".phones").html("<h1>Results for '" + $("#res-1440").text() + "'</h1>" + data).fadeIn();
-    				});
-    			}
-    		);
-
 
 
 		}); // end of doc.ready
@@ -207,54 +64,26 @@
 			</div>
 		</header>
 
-		<section id="intro">
-			<div class="wrapper">
-				<div id="search-bar">
-				<h1>Find Your Phone</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-       			<!-- Put post method here -->
-       			<form id="search-form">
-          			<input type="text" placeholder="Type model name..." class="search" id="search-query" method="POST">
-          			<a href="results.html"><button type="submit" class="sbutton" id="search-submit">Search</button></a>
-       			</form>
-       			<p id="message"></p>
-       			<a href="#" id="adv">Advanced Search</a>
-       			</div>
-			</div>
-		</section>
-
 		<section class="login-bar">
 			<div class="wrapper">
 				<div id="filler-msg"><img src="./img/lightbulb.png">
 					<p><i>Cell Well</i> is a database of smartphones tailored<br/> for submission to Myeong Lee.</p></div>
 				<div id="search-again">
 					<p id="query-confirm"></p>
-				<button id="header-slider" type="button" class="sbutton">Search Again?</button>
+				<a href="index.html"><button id="header-slider" type="button" class="sbutton">Search</button></a>
 				</div>
 			</div>
-
-<!-- 			<div class="login-opt">
-				<input type="checkbox" ="remember">Remember Me
-			</div> -->
 		</section>
 
-		<section class="detail-specs">
+		<section class="specs-box">
 			<div class="wrapper">
-	      		<h1>New Releases</h1>
+	      		<h1>Specifications</h1>
 
-	        <div class="phone">
+	        <div class="phone-specs">
 				<img src="./img/phone-imgs/iphonex.jpg">
 				<h3>iPhone X</h3>
-	        </div>
-
-	        <div class="phone">
-	         	<img src="./img/phone-imgs/iphone8.jpg">
-	         	<h3>iPhone 8</h3>
-	        </div>
-
-	        <div class="phone">
-	        	<img src="./img/phone-imgs/razer.jpg">
-	         	<h3>Razer</h3>
+				<p id="specs-here"><strong>Operating System:</strong> iOS<br />
+					<strong>Manufacturer:</strong> Apple</p>
 	        </div>
 	      </div>
     	</section>
