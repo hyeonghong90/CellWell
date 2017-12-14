@@ -1,6 +1,6 @@
 Developer's Manual Cell Well
 ======
-![alt text](https://farm5.staticflickr.com/4551/39045365031_78cc1a8b79.jpg "Logo Title Text 1")
+![alt text](https://farm5.staticflickr.com/4551/39045365031_78cc1a8b79_m.jpg "Logo Title Text 1")
 
 This document explains how to launch the Cell Well webpage using various systems, as well as explains the file and code structure used to create it.
 
