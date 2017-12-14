@@ -36,7 +36,7 @@ This document explains how to launch the CellWell webpage using various systems,
 	•VI/VIM/NANO (command-line editors) <br>
 	
 	System Directions: 
-	-Use Sublime Text and Command-line editors/terminals for this code.
+	- Use Sublime Text and Command-line editors/terminals for this code.
 	
 **Database Monitor/Manager** <br><br>
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
@@ -49,7 +49,7 @@ This document explains how to launch the CellWell webpage using various systems,
 	• Generate DB schema <br>
 	
 	System Directions: 
-	-Create new cell well schema and run cellwell_20171213_5.sql script on workbench. 
+	- Create new cell well schema and run cellwell_20171213_5.sql script on workbench. 
 	
 **Software/Libraries Used** <br>
 	• JQuery <br>
@@ -80,13 +80,13 @@ This document explains how to launch the CellWell webpage using various systems,
 		  corresponding phone on the webpage.<br>
 		
 	System Notes:	
-	Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
+	- Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
 ## Code Structure and Logic: (NOT LEGIT, NEED TO TALK TO GROUP/MYEONG FIRST)<br><br>
-cellwell_master.php file : <br>
+**cellwell_master.php file :** <br>
 		- PHP code establishing a connection between the database and server. <br>
 		- A while that loops through the entire database and checks it to the user's general query <br>
-		- Query connecting webpage features to aspects of database. <br> <br>
+		- A query connecting cell <br> <br>
 	css Folder: <br>
 		- Consists of two CSS files of webpage design. <br> <br>
 	db Folder: <br>
