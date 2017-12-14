@@ -17,7 +17,7 @@ This document explains how to launch the Cell Well webpage using various systems
  	• MySQL 5.6.35 <br>
 	• PHP 5.6.29, 5.6.30, 7.0.14, 7.0.15 & 7.1.1 <br>
 	• Python 2.7.13 <br>
-   	• phpMyAdmin 4.6.5.2 <br><br>
+   	• phpMyAdmin 4.6.5.2 <br>
 	
 	System Directions: 
 	- Ensure these versions are running on your MAC OSX, Windows, and Linux systems 
@@ -56,7 +56,7 @@ This document explains how to launch the Cell Well webpage using various systems
 	• Bootstrap <br>
 	
 ## File Structure <br> <br>
-![alt text](https://farm5.staticflickr.com/4737/24184158367_8f9d4416be_z.jpg "Logo Title Text 1")
-
-	
+![alt text](https://farm5.staticflickr.com/4737/24184158367_8f9d4416be_z.jpg "Logo Title Text 1") <br>
+	cellwell_master.php : <br>
+		- Ensures server is running and database is connected, Webpage query structure
 	
