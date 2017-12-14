@@ -1,9 +1,9 @@
-Developer's Manual Cell Well 
+Developer's Manual CellWell 
 =======
 
 ![alt text](https://farm5.staticflickr.com/4551/39045365031_78cc1a8b79_m.jpg "Logo Title Text 1")
 
-This document explains how to launch the Cell Well webpage using various systems, as well as explains the file and code structure used to create it.
+This document explains how to launch the CellWell webpage using various systems, as well as explains the file and code structure used to create it.
 
 ## Setting Up:
 
