@@ -96,6 +96,8 @@ This document explains how to launch the CellWell webpage using various systems,
 	**advanced_search.html:**<br>
 		- HTML code that creates an button-styled element list for all of the clickable features the user is able to filter by.   		 <br>
 		- The code structure references the style-default.css file to style advanced search buttons into filtration checkboxes. 		<br><br>
-	specs.html:<br>
+	**specs.html:**<br>
 		- Query specs  <br><br>
+	**fetch_specs.html:** <br>
+		- 
 
