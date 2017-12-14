@@ -6,11 +6,10 @@ This document explains how to launch the Cell Well webpage using various systems
 
 **Install Local Environment MAMP (for MacOS and Windows users)**<br> <br>
 	1.)  *Download:* <br>
-		- MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
- 		- MAMP & MAMP PRO 3.3.1 (Windows) <br>
-		-https://www.mamp.info/en/downloads/ <br>
-		- LAMP [Linux, Apache, MySQL, PHP] (Ubuntu) <br>
-	
+	• MAMP & MAMP PRO 4.2.1 (Mac OS X) <br>
+ 	• MAMP & MAMP PRO 3.3.1 (Windows) <br>
+	• https://www.mamp.info/en/downloads/ <br>
+	• LAMP [Linux, Apache, MySQL, PHP] (Ubuntu) <br>
 	2.)  *Verify:* <br> 
  	• MySQL 5.6.35 <br>
 	• PHP 5.6.29, 5.6.30, 7.0.14, 7.0.15 & 7.1.1 <br>
@@ -33,7 +32,6 @@ This document explains how to launch the Cell Well webpage using various systems
 	Sublime Text and Command-line editors are ideal for this code <br>
 	<br>
 **Database Monitor/Manager** <br>
-
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
 	1.) *Install MySQL Workbench to:* <br>
 	https://dev.mysql.com/downloads/workbench/ <br>
