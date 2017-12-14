@@ -19,12 +19,14 @@ function query_to_db($conn, $sql){
     $result = mysqli_query($conn, $sql);
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
+            echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='wrapper'><a href='specs.html' class='specs-link'><div class='phone' id='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div></a></div>";
+                echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div>";
             }
+            echo "</div>";
     		// echo "Your query was successful";
     	} else {
-    		echo "No result...";
+    		echo "No results found. Try again?";
     	}
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);

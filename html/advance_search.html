@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cell Well</title>
+    <link rel="stylesheet" href="./css/style-default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 	<script type="text/javascript">
+		// $(function(){
+		// 	$('li:has(ul)').click(function(event) {
+		// 			if (this == event.target) {
+		// 				$(this).children().toggle("fast");
+		// 			}
+		// 			return false;
+		// 		})
+
+		// 		.children().hide();
+		// });
+
+		$(document).ready (function() {
+
+				// for search bar
+    		$(document).on("click", "#search-submit", function() {
+	        	var $query = $("#search-query").val();
+
+	        	$.post("cellwell_master.php", { user_input: $query } );
+
+	        	$("#search-form").trigger("reset");
+	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+
+        	$.post("cellwell_master.php", 
+	          {
+	          	user_input: $query
+	          }, function(data, status){
+            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
+          }
+        );
+
+        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+
+	        	return false;
+    		});
+
+/*    		$(document).on("click", "#brand-apple", function() {
+    			$.post("cellwell_master.php", { facet_keyword: "only-apple" } );
+    			alert("only apple");
+    		}
+
+    		$(document).on("click", "#brand-samsung", function() {
+    			$.post("cellwell_master.php", { facet_keyword: "only-samsung" } );
+    		}*/
+		});
+	$(document).ready(function(){
+	
+		// Select a parent of a clicked row
+		$("ul").click(function(){				
+			// $(this).parents("#table").after("<div class='added'>Clicked: " + $(this).text() + "</div>");
+			// $(this).parents("#table").append("<div class='added'>Clicked: " + $(this).text() + "</div>");
+			$(this).parents("#table").before("<div class='added'>" + $(this).text() + "</div>");
+			});
+		
+	});
+
+	// $(document).ready(function(){
+	// 	$('facet-list').click(function(){
+	// 		alert('TEST');
+	// 	});
+	// });
+
+		// function facetClick() {
+		// 	var $class = $(this).class;
+
+		// 	$($class).click(function(){
+		// 		alert("TEST");
+		// 	})
+		// }
+
+		// function facetClick() {
+		// 	var $id = $(this).id;
+
+  //   		$($id).click(function() {
+  //   			alert("only apple");
+  //   		});
+
+  //   		return false;
+		// }
+
+		
+ 	</script>
+
+	</head>
+
+		<header>
+			<div class="wrapper">
+				<div id="logo">
+					<h1><a href="index.html">Cell Well</a></h1>
+				</div>
+
+				<nav>
+					<ul>
+						<li class="active"><a href="index.html"> HOME </a></li>
+						<li><a href="brands.html"> FINDER </a></li>
+						<li><a href="news.html"> DOCS </a></li>
+						<li><a href="CONTACT.html"> MEMBERS </a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<section id="intro">
+			<div class="wrapper">
+				<div id="search-bar">
+				<h1>Find Your Phone</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+       			<!-- Put post method here -->
+       			<form id="search-form">
+          			<input type="text" placeholder="Type model name..." class="search" id="search-query" method="POST">
+          			<a href="results.html"><button type="submit" class="sbutton" id="search-submit">Search</button></a>
+       			</form>
+       			<p id="message"></p>
+       			<a href="advance_search.html" id="adv">Advanced Search</a>
+       			</div>
+			</div>
+		</section>
+
+
+		<section class="facetsAD">
+	    	<div class="wrapper">
+	    <h2>Advance Search</h2>
+
+		<ul>
+			<li class="facet-listAD">BRANDS
+				<ul class="">
+					<li id="brand-apple" class="sub" >Apple</li>
+					<li id="brand-blackberry" class="sub">BlackBerry</li>
+					<li id="brand-google" class="sub">Google</li>
+					<li id="brand-huawei" class="sub">Huawei</li>
+					<li id="brand-htc" class="sub">HTC</li>
+					<li id="brand-lg" class="sub">LG</li>
+					<li id="brand-motorola" class="sub">Motorola</li>
+					<li id="brand-nokia" class="sub">Nokia</li>
+					<li id="brand-samsung" class="sub">Samsung</li>
+					<li id="brand-sony" class="sub">Sony</li>
+					<li id="brand-windows" class="sub">Windows</li>
+				</ul>
+			</li>
+			<li class="facet-listAD">CARRIERS
+				<ul>
+					<li id="carrier-at&t" class="sub">AT&T</li>
+					<li id="carrier-sprint" class="sub">Sprint</li>
+					<li id="carrier-tmobile" class="sub">T-Mobile</li>
+					<li id="carrier-verizon" class="sub">Verizon</li>
+				</ul>
+			</li>
+			<li class="facet-listAD">
+				DISPLAY SIZE
+				<ul>
+					<li class="sub">6 in.</li>
+					<li class="sub">5 in.</li>
+					<li class="sub">4 in.</li>
+				</ul>
+			</li>
+
+			<li class="facet-listAD">
+				Chipset
+				<ul>
+					<li class="sub">Apple A11 Bionic</li>
+					<li class="sub">Exynos 7420 Octa</li>
+					<li class="sub">Mediatek MT6737</li>
+					<li class="sub">Mediatek MT6757 Helio P20</li>
+					<li class="sub">Qualcomm Snapdragon 212</li>
+					<li class="sub">Qualcomm Snapdragon 630</li>
+					<li class="sub">Qualcomm MSM8226 Snapdragon 400</li>
+					<li class="sub">Qualcomm MSM8992 Snapdragon 808</li>
+					<li class="sub">Qualcomm MSM8994 Snapdragon 810</li>
+					<li class="sub">Qualcomm MSM8996 Snapdragon 820</li>
+					<li class="sub">Qualcomm MSM8996 Snapdragon 821</li>
+					<li class="sub">Qualcomm MSM8998 Snapdragon 835</li>
+					<li class="sub">Qualcomm MSM8909 Snapdragon 210</li>
+					<li class="sub">Qualcomm MSM8937 Snapdragon 430</li>
+					<li class="sub">Qualcomm MSM8953 Snapdragon 625</li>
+					<li class="sub">Qualcomm MSM8953 Snapdragon 835</li>
+					<li class="sub">Qualcomm MSM8974AB Snapdragon 801</li>
+					<li class="sub">Qualcomm MSM8974AC Snapdragon 801</li>
+					<li class="sub">Qualcomm MSM8996 Snapdragon 617</li>
+					<li class="sub">Qualcomm MSM8996 Snapdragon 810</li>
+				</ul>
+			</li>
+
+			<li class="facet-listAD">
+				OPERATING SYSTEM
+				<ul>
+					<li class="sub">ANDROID</li>
+					<li class="sub">iOS</li>	
+				</ul>
+			</li>
+			<li class="facet-listAD">Display Type
+				<ul>
+					<li class="sub">16M colors</li>
+					<li class="sub">AMOLED capacitive touchscreen</li>
+					<li class="sub">IPS LCD capacitive touchscreen</li>
+					<li class="sub">LED-backlit IPS LCD</li>
+					<li class="sub">LTPS IPS LCD capacitive touchscreen</li>				
+					<li class="sub">OLED capacitive touchscreen</li>
+					<li class="sub">P-OLED capacitive touchscreen</li>
+					<li class="sub">Super AMOLED capacitive touchscreen</li>
+					<li class="sub">Super LCD5 capacitive touchscreen</li>
+				</ul>
+			</li>
+			<li class="facet-listAD">Internal Memory
+				<ul>
+					<li class="sub">8 GB</li>
+					<li class="sub">16 GB</li>
+					<li class="sub">32 GB</li>
+					<li class="sub">64 GB</li>
+					<li class="sub">128 GB</li>
+					<li class="sub">256 GB</li>				
+				</ul>
+			</li>
+
+			<li class="facet-listAD">Internal RAM
+				<ul>
+					<li class="sub">1 GB</li>
+					<li class="sub">2 GB</li>
+					<li class="sub">3 GB</li>
+					<li class="sub">4 GB</li>
+					<li class="sub">6 GB</li>				
+				</ul>
+			</li>
+
+			<li class="facet-listAD">Display Size (inches)
+				<ul>
+					<li class="sub">4.5</li>
+					<li class="sub">4.7</li>
+					<li class="sub">5.0</li>
+					<li class="sub">5.1</li>
+					<li class="sub">5.2</li>
+					<li class="sub">5.3</li>
+					<li class="sub">5.5</li>
+					<li class="sub">5.7</li>
+					<li class="sub">5.8</li>
+					<li class="sub">6.0</li>
+					<li class="sub">6.3</li>	
+				</ul>
+			</li>
+
+			<li class="facet-listAD">Battery Size (mAh)
+				<ul>
+					<li class="sub">1960</li>
+					<li class="sub">2505</li>
+					<li class="sub">2610</li>
+					<li class="sub">2691</li>
+					<li class="sub">2700</li>
+					<li class="sub">3200</li>
+					<li class="sub">2716</li>
+					<li class="sub">1821</li>
+					<li class="sub">2900</li>
+					<li class="sub">3000</li>
+					<li class="sub">2000</li>
+					<li class="sub">3349</li>
+					<li class="sub">3450</li>
+					<li class="sub">2100</li>
+					<li class="sub">3430</li>
+					<li class="sub">3090</li>
+					<li class="sub">2930</li>
+					<li class="sub">2630</li>
+					<li class="sub">3520</li>
+					<li class="sub">3500</li>
+					<li class="sub">3600</li>
+					<li class="sub">2770</li>
+					<li class="sub">3300</li>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD">Removable Memory
+				<ul>
+					<li class="sub">Yes</li>
+					<li class="sub">No</li>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD">3.5mm Jack
+				<ul>
+					<li class="sub">Yes</li>
+					<li class="sub">No</li>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD">Fingerprint Scanner
+				<ul>
+					<li class="sub">No</li>
+					<li class="sub">Front</li>
+					<li class="sub">Rear</li>
+				</ul>
+			</li>
+
+			<li class="facet-listAD">Display Resolution (pixels)
+				<ul>
+					<li class="sub">1440 x 2560</li>
+					<li class="sub">1080 x 1920</li>
+					<li class="sub">1440 x 2880</li>
+					<li class="sub">1125 x 2436</li>
+					<li class="sub">750 x 1334</li>
+					<li class="sub">720 x 1280</li>
+					<li class="sub">1440 x 2960</li>
+					<li class="sub">1080 x 1620</li>
+				</ul>
+			</li>
+
+			<li class="facet-listAD">Display Ratio
+				<ul>
+					<li class="sub">18:9</li>
+					<li class="sub">16:9</li>
+					<li class="sub">19.5:9</li>
+					<li class="sub">18.5:9</li>
+					<li class="sub">3:2</li>
+				</ul>
+			</li>
+
+			<li class="facet-listAD">Front Camera
+				<ul>
+					<li class="sub">5 MP</li>
+					<li class="sub">2.2 MP</li>
+					<li class="sub">7 MP</li>
+					<li class="sub">8 MP</li>
+					<li class="sub">13 MP</li>
+					<li class="sub">1.1 MP</li>
+
+					<li class="sub">f/1.7</li>
+					<li class="sub">f/1.9</li>
+					<li class="sub">f/2.0</li>
+					<li class="sub">f/2.2</li>
+					<li class="sub">f/2.4</li>
+					<li class="sub">f/2.8</li>
+
+					<li class="sub">1/32" sensor size</li>
+					<li class="sub">1/5" sensor size</li>
+					<li class="sub">1/4" sensor size</li>
+					<li class="sub">1/3" sensor size</li>
+
+					<li class="sub">1.0 um pixel size</li>
+					<li class="sub">1.12 um pixel size</li>
+					<li class="sub">1.4 um pixel size</li>
+					<li class="sub">1.34 um pixel size</li>
+					<li class="sub">1.22 um pixel size</li>
+
+					<li class="sub">1080p</li>
+					<li class="sub">480p</li>
+					<li class="sub">1080@30fps</li>
+					<li class="sub">720p@240fps</li>
+					<li class="sub">720p video</li>
+					<li class="sub">720@70fps</li>
+					<li class="sub">1440p@30fps</li>
+
+					<li class="sub">32mm</li>
+					<li class="sub">22mm</li>
+					<li class="sub">23mm</li>
+
+					<li class="sub">panorama</li>
+					<li class="sub">EIS (gyro)</li>
+					<li class="sub">HDR</li>
+					<li class="sub">Auto HDR</li>
+					<li class="sub">autofocus</li>
+					<li class="sub">face detection</li>
+					<li class="sub">phase detection autofocus</li>
+					<li class="sub">dual video call</li>
+					<li class="sub">LED flash</li>
+				</ul>
+			</li>
+
+
+			<!-- <li class="facet-listAD">Rear Camera
+				<ul>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+					<li class="sub"></li>
+				</ul>
+			</li> -->
+
+		</ul>
+
+
+		</div>
+		</section>
+
+		<section class="selected-filters">
+			<table id =table class="wrapper">
+	      		<h1>Selected Filters</h1>
+	      			
+			        <!-- <div class="phone">
+						<img src="./img/phone-imgs/iphonex.jpg">
+						<h3>iPhone X</h3>
+			        </div> -->
+
+			        <!-- <div class="phone">
+			         	<img src="./img/phone-imgs/iphone8.jpg">
+			         	<h3>iPhone 8</h3>
+			        </div>
+
+			        <div class="phone">
+			        	<img src="./img/phone-imgs/razer.jpg">
+			         	<h3>Razer</h3>
+			        </div> -->
+	     	</div>
+    	</section>
+	
+
+	</body>
+</html>
