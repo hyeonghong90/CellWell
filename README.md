@@ -1,7 +1,7 @@
 CellWell
 =======
 ![alt text](https://farm5.staticflickr.com/4551/39045365031_78cc1a8b79_m.jpg "Logo Title Text 1") <br>
-This is a repository for the Cell Well project from INST377 class, UMD.
+This is the repository for the Cell Well project from INST377 class at UMD.
 
 ### Participants:
 - Nikoli Bolivar nbolivar@terpmail.umd.edu
