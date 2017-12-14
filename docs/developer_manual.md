@@ -90,12 +90,12 @@ This document explains how to launch the CellWell webpage using various systems,
 	**style-default.css:**<br>
 		- Structural CSS code designing the layout of webpage from top to bottom including the homepage, advanced search page, and phone display pages. <br> <br>
 	**index.html file:** <br>
-		- Consits of HTML, JavaScript, and JQuery code implementing all of the quick access tabs to communicate with the 			  database, query the necessary content, and post query results. <br>
+		- Consits of HTML, JavaScript, and JQuery code implementing all of the quick access tabs to communicate with the 			  database, query the necessary content, and post query results. <br><br>
 	**get_images.php**: <br>
-		- PHP code that gets the cellID and inserts the corresponding image by its image path, manufacturer name,and model name.  <br>
+		- PHP code that gets the cellID and inserts the corresponding image by its image path, manufacturer name,and model name.   		 <br><br>
 	**advanced_search.html:**<br>
-		- HTML code that creates an button-styled element list for all of the clickable features the user is able to filter by.    <br>
-		- The code structure references the style-default.css file to style advanced search buttons into filtration checkboxes. <br><br>
+		- HTML code that creates an button-styled element list for all of the clickable features the user is able to filter by.   		 <br>
+		- The code structure references the style-default.css file to style advanced search buttons into filtration checkboxes. 		<br><br>
 	specs.html:<br>
 		-???????<br><br>
 
