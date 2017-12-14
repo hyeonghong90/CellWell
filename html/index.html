@@ -28,10 +28,10 @@
 
 			$(document).on('click','.phone',function() {
 				var $phone = $(this).attr('value');
-				$(".phones").html("<h1>" + $phone + " Specs</h1>").fadeIn();
+                $(".phones").empty();
 
     			$.post("fetch_specs.php", { model_name: $phone }, function(data, status) {
-    					alert(data);
+    					$(".phones").html("<h1>" + $phone + " Specs</h1>" + data).fadeIn();
     				}
     			);
 			}
