@@ -35,7 +35,7 @@ This document explains how to launch the Cell Well webpage using various systems
 	•VI/VIM/NANO (command-line editors) <br>
 	
 	System Directions: 
-	Use Sublime Text and Command-line editors/terminals for this code 
+	-Use Sublime Text and Command-line editors/terminals for this code 
 	
 **Database Monitor/Manager** <br><br>
 	After mySQL is installed during the MAMP/LAMP installation process, <br>
@@ -48,14 +48,14 @@ This document explains how to launch the Cell Well webpage using various systems
 	• Generate DB schema <br>
 	
 	System Directions: 
-	Create new cell well schema and run cellwell_20171213_5.sql script on workbench. 
+	-Create new cell well schema and run cellwell_20171213_5.sql script on workbench. 
 	
 **Software/Libraries Used** <br>
 	• JQuery <br>
 	• Bootstrap <br>
 	
 ## File Structure <br> <br>
-
+![alt text](https://farm5.staticflickr.com/4737/24184158367_8f9d4416be_z.jpg "Logo Title Text 1")
 
 	
 	
