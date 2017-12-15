@@ -60,7 +60,7 @@ This document explains how to launch the CellWell webpage using various systems,
 	**cellwell_master.php file :** <br>
 		- Ensures server is running and database is connected. <br>
 		- Query connecting webpage features to aspects of database. <br> <br>
-	**css Folder:** <br>
+	**css Folder:** <br> 
 		- Consits of style-default.css file that contains the code that corresponds to the layout  <br>
 	 	  fonts, color, and general styling of the page. <br><br>
 	**db Folder:** <br>
