@@ -78,7 +78,7 @@ This document explains how to launch the CellWell webpage using various systems,
 	**specs.html:**<br>
 		- HTML and JQuery code created to assigned detailed specifications from database to their <br>
 		  corresponding phone on the webpage.<br>
-		
+		  
 	System Notes:	
 	- Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
@@ -97,9 +97,7 @@ This document explains how to launch the CellWell webpage using various systems,
 		- HTML code that creates an button-styled element list for all of the clickable features the user is able to filter by.   		 <br>
 		- The code structure references the style-default.css file to style advanced search buttons into filtration checkboxes. 		<br><br>
 	**specs.html:**<br>
-		- Query specs   <br><br>
-	**fetch_specs.html:** <br>
-		- 
+		- HTML structure of specifications page using headers and divs <br>
 	**fetch_specs.php** <br>
-		-
+		- PHP code structured to use query to fetch specifications from database and display on webpage. <br>
 	**advanced_search.php** <br>
