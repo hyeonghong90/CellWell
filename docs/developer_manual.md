@@ -75,10 +75,11 @@ This document explains how to launch the CellWell webpage using various systems,
 		  and assigns them to the phones from database on webpage.<br><br>
 	**advanced_search.html:**<br>
 		- HTML and JQuery code for advanced search facet of webpage.<br><br>
-	**specs.html:**<br>
-		- HTML and JQuery code created to assigned detailed specifications from database to their <br>
-		  corresponding phone on the webpage.<br>
-		  
+	**fetch_specs.php** <br>
+		- PHP code structured communicate with database for content/data. <br><br>
+	**advanced_search.php** <br>
+		- PHP written to query through each row of the database.
+  
 	System Notes:	
 	- Every file utilizes other files and folders in the structure to create a code system that can be easily navigated. 
 	
@@ -99,4 +100,5 @@ This document explains how to launch the CellWell webpage using various systems,
 	**fetch_specs.php** <br>
 		- PHP code structured to use query to fetch specifications from database and display on webpage. <br><br>
 	**advanced_search.php** <br>
-		- PHP written to query through each row of the database using a loop to display results of user's clickable aspects.
+		- PHP written to query through each row of the database using a loop to display results of user's clickable aspects<br>
+		using query conditions. 
