@@ -44,9 +44,14 @@ function query_to_db($conn, $sql){
             echo "<img class='thumbnail-detail' src='". $cell_info['picture_path'][0] ."'>";
                     foreach ($cell_info as $cell => $value){
                         foreach ($value as $val){
-                            echo "<pre>";
-                            print_r($cell . ": " . $val);
-                            echo "</pre>"; 
+                            echo "<tr>";
+                            echo "<th>";
+                            print_r($cell);
+                            echo "</th>";
+                            echo "<td>";
+                            print_r($val);
+                            echo "</td>";
+                            echo "</tr>";
                         }
                     }
             echo "</table>";
