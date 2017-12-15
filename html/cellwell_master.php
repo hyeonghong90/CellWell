@@ -21,7 +21,7 @@ function query_to_db($conn, $sql){
     	if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='phone' value='" . $row["cellName"] . "'><img src='" . $row["picture_path"] . "'><h3>" . $row["cellName"] . "</h3></div>";
+                echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div>";
             }
             echo "</div>";
     		// echo "Your query was successful";
@@ -35,7 +35,7 @@ function query_to_db($conn, $sql){
 
 
 // Creating a query
-$query = "SELECT DISTINCT(cellName) FROM celldata as c1
+$query = "SELECT * FROM celldata as c1
 JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
