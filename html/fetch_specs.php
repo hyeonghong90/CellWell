@@ -16,17 +16,15 @@ if (!$conn) {
 
 // A function for general queries.
 function query_to_db($conn, $sql){
-<<<<<<< HEAD
+
 	$result = mysqli_query($conn, $sql);
-=======
 
     $result = mysqli_query($conn, $sql);
->>>>>>> bdecda8e0053c20fd5f58677e45df88cb8578998
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . 
+                echo "<div class='phone' value='" . $row["cellName"] . "'>" . 
                 $row["cellName"] . 
                 $row["phoneMaker"] . 
                 $row["os"] . 
@@ -45,7 +43,7 @@ function query_to_db($conn, $sql){
                 $row["removableMemory"] . 
                 $row["jack3.5mm"] .
                 $row["fingerprintScanner"] .
-                "</h3></div>";
+                "</div>";
             }
             echo "</div>";
     		// echo "Your query was successful";
