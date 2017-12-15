@@ -97,7 +97,8 @@ This document explains how to launch the CellWell webpage using various systems,
 		- HTML code that creates an button-styled element list for all of the clickable features the user is able to filter by.   		 <br>
 		- The code structure references the style-default.css file to style advanced search buttons into filtration checkboxes. 		<br><br>
 	**specs.html:**<br>
-		- HTML structure of specifications page using headers and divs <br>
+		- HTML structure of specifications page using headers and divs <br><br>
 	**fetch_specs.php** <br>
-		- PHP code structured to use query to fetch specifications from database and display on webpage. <br>
+		- PHP code structured to use query to fetch specifications from database and display on webpage. <br><br>
 	**advanced_search.php** <br>
+		- PHP written to query through each row of the database using a loop to display results of user's clickable aspects.
