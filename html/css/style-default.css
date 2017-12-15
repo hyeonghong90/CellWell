@@ -291,6 +291,11 @@ td {
   margin-bottom: 5px;
 }
 
+#submit-filters {
+  width: 200px;
+  height: 50px;
+}
+
 .facetsAD {
     float: left;
     margin-top: 10px;
@@ -314,7 +319,7 @@ td {
     margin-top: 5px;
     margin-right: 100px;
     padding: 18px;
-    width: 1500px;
+    min-width: 1500px;
     text-align: left;
     list-style-type: none;
     border: 1 #b197ac 1px solid;
@@ -339,6 +344,7 @@ td {
 .facetsAD li.facet-listAD:hover {
   background-color: #60515e;
   color: white;
+  cursor: default;
   display:  inline-block;
   transition: 0.5s; 
 }
@@ -374,4 +380,4 @@ td {
 
 .checkboxFour input[type=checkbox]:checked + label{
   background: #26ca28;
-} 
+}

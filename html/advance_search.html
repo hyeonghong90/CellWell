@@ -11,27 +11,10 @@
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
  	<script type="text/javascript">
-		// $(function(){
-		// 	$('li:has(ul)').click(function(event) {
-		// 			if (this == event.target) {
-		// 				$(this).children().toggle("fast");
-		// 			}
-		// 			return false;
-		// 		})
 
-		// 		.children().hide();
-		// });
+		/*$(document).ready (function() {
 
-		$(document).ready (function() {
-
-				// for search bar
-    		$(document).on("click", "#search-submit", function() {
-	        	var $query = $("#search-query").val();
-
-	        	$.post("cellwell_master.php", { user_input: $query } );
-
-	        	$("#search-form").trigger("reset");
-	        	$("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
+			$("#submit-filters").click();
 
         	$.post("cellwell_master.php", 
 	          {
@@ -39,22 +22,10 @@
 	          }, function(data, status){
             $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
           }
-        );
-
-        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
 
 	        	return false;
     		});
-
-/*    		$(document).on("click", "#brand-apple", function() {
-    			$.post("cellwell_master.php", { facet_keyword: "only-apple" } );
-    			alert("only apple");
-    		}
-
-    		$(document).on("click", "#brand-samsung", function() {
-    			$.post("cellwell_master.php", { facet_keyword: "only-samsung" } );
-    		}*/
-		});
+		});*/
 		
  	</script>
 
@@ -77,36 +48,39 @@
 			</div>
 		</header>
 
-		<section id="intro">
+		<section class="login-bar">
 			<div class="wrapper">
-				<div id="search-bar">
-				<h1>Find Your Phone</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-       			<!-- Put post method here -->
-       			<form id="search-form">
-          			<input type="text" placeholder="Type model name..." class="search" id="search-query" method="POST">
-          			<a href="results.html"><button type="submit" class="sbutton" id="search-submit">Search</button></a>
-       			</form>
-       			<p id="message"></p>
-       			<a href="advance_search.html" id="adv">Advanced Search</a>
-       			</div>
+				<div id="filler-msg"><img src="./img/lightbulb.png">
+					<p><i>Cell Well</i> is a database of smartphones tailored<br/> for submission to Myeong Lee.</p></div>
+				<div id="search-again">
+					<p id="query-confirm"></p>
+				</div>
+			</div>
+		</section>
+
+		<section id="filter-button">
+			<div class="wrapper">
+				<div id="submit">
+					<p id="query-confirm"></p>
+				</div>
 			</div>
 		</section>
 
 
 		<section class="facetsAD">
 	    <div class="wrapper">
-	    <h2>Advance Search</h2>
+	    <h2>Advanced Search</h2>
 
 		<ul>
 			<li class="facet-listAD"><h3>BRANDS</h3>
 				<ul class="checkboxFourInput">
 					<div class="checkboxFourInput">
-						<form action="cellwell_master.php">
-							<input type="checkbox" id="brand-apple"/> 
+
+						<form action="/dummy.php" method='POST'>
+							<input type="checkbox" name="brand" value="Apple" id="brand-apple"/> 
 								<label for="brand-apple">Apple</label>
 
-							<input type="checkbox" id="brand-blackberry"/> 
+							<input type="checkbox" name="brand" value="Blackberry" id="brand-blackberry"/> 
 								<label for="brand-blackberry">BlackBerry</label>
 
 							<input type="checkbox" id="brand-google"/> 
@@ -134,7 +108,10 @@
 								<label for="brand-sony">Sony</label>
 							
 							<input type="checkbox" id="brand-windows"/> 
-								<label for="brand-windows">Windows</label>
+								<label for="brand-windows">Windows</label><br/>
+
+							<input id="submit-filters" type="submit" class="sbutton" value="Submit" />
+
 						</form>
 					</div>
 				</ul>
