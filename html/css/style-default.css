@@ -232,8 +232,8 @@ li .sub:hover {
   height: 150px;
 }
 
-#thumbnail-detail {
-  width: 220px;
+.thumbnail-detail {
+  width: 180px;
   height: 250px;
 }
 

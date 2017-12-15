@@ -31,8 +31,8 @@
                 $(".phones").empty();
 
     			$.post("fetch_specs.php", { model_name: $phone }, function(data, status) {
-                        var trim = data.split('#')[0];
     					$(".phones").html("<h1>" + $phone + " Specs</h1>" + data).fadeIn();
+                        alert(data);
     				}
     			);
 			}
@@ -228,7 +228,7 @@
 			<div class="wrapper">
 				<div id="search-bar">
 				<h1>Find Your Phone</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p>Search for the hottest phones available!</p>
        			<!-- Put post method here -->
        			<form id="search-form">
           			<input type="text" placeholder="Type model or maker name..." class="search" id="search-query" method="POST">
@@ -323,7 +323,7 @@
 
                 <div id="specs-table">
                    <!--  <img id="thumbnail" src="./img/phone-imgs/iphonex.jpg"> -->
-                    <img class="detail-thumbnail" src="./img/phone-imgs/iphonex.jpg">
+                    <img class="thumbnail-detail" src="./img/phone-imgs/iphonex.jpg">
 
                     <table>
                         <tr>
