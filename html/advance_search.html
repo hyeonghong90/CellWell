@@ -12,20 +12,33 @@
 
  	<script type="text/javascript">
 
-		/*$(document).ready (function() {
+		$(document).ready (function() {
 
-			$("#submit-filters").click();
+			$("#submit-filters").click(function() {
+				$(".filter-box").fadeOut();
 
-        	$.post("cellwell_master.php", 
-	          {
-	          	user_input: $query
-	          }, function(data, status){
-            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
-          }
+    			$.post("cellwell_master.php", { os: "android" }, function(data, status) {
+    				$(".filter-box").html("<h1>Results for selected...</h1>" + data).fadeIn();
+				});
 
-	        	return false;
+    			return false;
     		});
-		});*/
+
+			$(document).on('click','.phone',function() {
+				var $phone = $(this).attr('value');
+                $(".filter-box").empty();
+
+    			$.post("fetch_specs.php", { model_name: $phone }, function(data, status) {
+    					$(".filter-box").html("<h1>" + $phone + " Specs</h1>" + data).fadeIn();
+    				}
+    			);
+			}
+			);
+
+			}
+		);
+
+
 		
  	</script>
 
@@ -40,9 +53,9 @@
 				<nav>
 					<ul>
 						<li class="active"><a href="index.html"> HOME </a></li>
-						<li><a href="brands.html"> FINDER </a></li>
-						<li><a href="news.html"> DOCS </a></li>
-						<li><a href="CONTACT.html"> MEMBERS </a></li>
+						<li><a href="advance_search.html"> FINDER </a></li>
+						<li><a href="./docs/user_manual.md"> GUIDE </a></li>
+						<li><a href="./docs/developer_manual.md"> DEVS </a></li>
 					</ul>
 				</nav>
 			</div>
@@ -66,8 +79,175 @@
 			</div>
 		</section>
 
+		<section class="filter-box">
+			<div class="wrapper">
+	      		<h1>Advanced Search</h1>
 
-		<section class="facetsAD">
+	        <div class="checkboxFourInput">
+
+						<form method='POST'>
+							<h3>Brand</h3>
+
+								<input type="checkbox" name="brand" value="Apple" id="brand-apple"/> 
+									<label for="brand-apple">Apple</label>
+
+								<input type="checkbox" name="brand" value="Blackberry" id="brand-blackberry"/> 
+									<label for="brand-blackberry">BlackBerry</label>
+
+								<input type="checkbox" id="brand-google"/> 
+									<label for="brand-google">Google</label>
+								
+								<input type="checkbox" id="brand-huawei"/> 
+									<label for="brand-huawei">Huawei</label>
+
+								<input type="checkbox" id="brand-htc"/> 
+									<label for="brand-htc">HTC</label>
+
+								<input type="checkbox" id="brand-lg"/> 
+									<label for="brand-lg">LG</label><br/>
+
+								<input type="checkbox" id="brand-motorola"/> 
+									<label for="brand-motorola">Motorola</label>
+								
+								<input type="checkbox" id="brand-nokia"/> 
+									<label for="brand-nokia">Nokia</label>
+								
+								<input type="checkbox" id="brand-samsung"/> 
+									<label for="brand-samsung">Samsung</label>
+								
+								<input type="checkbox" id="brand-sony"/> 
+									<label for="brand-sony">Sony</label>
+								
+								<input type="checkbox" id="brand-windows"/> 
+									<label for="brand-windows">Windows</label><br/>
+
+							<h3>Carrier</h3>
+
+								<input type="checkbox" id="carrier-at&t"/> 
+									<label for="carrier-at&t">AT&T</label>
+								
+								<input type="checkbox" id="carrier-sprint"/> 
+									<label for="carrier-sprint">Sprint</label>
+								
+								<input type="checkbox" id="carrier-tmobile"/> 
+									<label for="carrier-tmobile">T-Mobile</label>
+								
+								<input type="checkbox" id="carrier-verizon"/> 
+									<label for="carrier-verizon">Verizon</label><br/>
+
+							<h3>Screen Size</h3>
+
+								<input type="checkbox" id="displaysize-above6in"/> 
+									<label for="displaysize-above6in">Above 6 in.</label>
+								
+								<input type="checkbox" id="displaysize-above5in"/> 
+									<label for="displaysize-above5in">Above 5 in.</label>
+								
+								<input type="checkbox" id="displaysize-above4in"/> 
+									<label for="displaysize-above4in">Above 4 in.</label><br/>
+
+							<h3>Chipset Brand</h3>
+
+								<input type="checkbox" id="chipset-apple"/> 
+									<label for="chipset-apple">Apple</label>
+								
+								<input type="checkbox" id="chipset-exynos"/> 
+									<label for="chipset-exynos">Exynos</label>
+								
+								<input type="checkbox" id="chipset-qualcomm"/> 
+									<label for="chipset-qualcomm">Qualcomm</label>
+
+							<h3>Display Type</h3>
+
+								<input type="checkbox" id="displaytype-16m"/> 
+										<label for="displaytype-16m">16M colors</label>
+								
+								<input type="checkbox" id="displaytype-amoled"/> 
+									<label for="displaytype-amoled">AMOLED capacitive touchscreen</label>
+
+								<input type="checkbox" id="displaytype-ipslcd"/> 
+										<label for="displaytype-ipslcd">IPS LCD capacitive touchscreen</label><br/>
+								
+								<input type="checkbox" id="displaytype-ledbacklit"/> 
+									<label for="displaytype-ledbacklit">LED-backlit IPS LCD</label>	
+
+								<input type="checkbox" id="displaytype-ltpsipslcs"/> 
+										<label for="displaytype-ltpsipslcs">LTPS IPS LCD capacitive touchscreen</label>
+								
+								<input type="checkbox" id="displaytype-olded"/> 
+									<label for="displaytype-olded">OLED capacitive touchscreen</label><br/>
+
+								<input type="checkbox" id="displaytype-poled"/> 
+										<label for="displaytype-poled">P-OLED capacitive touchscreen</label>		
+
+								<input type="checkbox" id="displaytype-superamoled"/> 
+									<label for="displaytype-superamoled">Super AMOLED capacitive touchscreen</label>	
+
+								<input type="checkbox" id="displaytype-superlcd5"/> 
+										<label for="displaytype-superlcd5">Super LCD5 capacitive touchscreen</label><br/>
+
+							<h3>Internal Memory</h3>
+
+								<input type="checkbox" id="internalmemory-8"/> 
+									<label for="internalmemory-8">8 GB</label>
+								
+								<input type="checkbox" id="internalmemory-16"/> 
+									<label for="internalmemory-16">16 GB</label>
+
+								<input type="checkbox" id="internalmemory-32"/> 
+									<label for="internalmemory-32">32 GB</label>
+								
+								<input type="checkbox" id="internalmemory-64"/> 
+									<label for="internalmemory-64">64 GB</label>
+
+								<input type="checkbox" id="internalmemory-128"/> 
+									<label for="internalmemory-128">128 GB</label>
+								
+								<input type="checkbox" id="internalmemory-256"/> 
+									<label for="internalmemory-256">256 GB</label><br/>
+
+							<h3>Internal RAM</h3>
+
+								<input type="checkbox" id="internalram-1"/> 
+									<label for="internalram-1">1 GB</label>
+								
+								<input type="checkbox" id="internalram-2"/> 
+									<label for="internalram-1">2 GB</label>
+
+								<input type="checkbox" id="internalram-3"/> 
+									<label for="internalram-1">3 GB</label>
+								
+								<input type="checkbox" id="internalram-4"/> 
+									<label for="internalram-1">4 GB</label>
+
+								<input type="checkbox" id="internalram-6"/> 
+									<label for="internalram-1">6 GB</label><br/>
+
+							<h3>Battery Size (mAh)</h3>
+							<input type="checkbox" id="battersize-above1500"/> 
+								<label for="battersize-above1500">Above 1500 mAh</label>
+							
+							<input type="checkbox" id="battersize-above2000"/> 
+								<label for="battersize-above2000">Above 2000 mAh</label>
+
+							<input type="checkbox" id="battersize-above3000"/> 
+								<label for="battersize-above3000">Above 3000 mAh</label><br/>
+
+							<h3>3.5mm JACK</h3>
+						<input type="radio" id="35mmjack-yes"/> 
+							<label for="35mmjack-yes">Yes</label>
+						
+						<input type="radio" id="35mmjack-no"/> 
+							<label for="35mmjack-no">No</label><br/>
+
+							<input id="submit-filters" type="submit" class="sbutton" value="Submit" />
+						</form>
+	        </div>
+	      </div>
+    	</section>
+
+
+		<!-- <section class="facetsAD">
 	    <div class="wrapper">
 	    <h2>Advanced Search</h2>
 
@@ -387,7 +567,7 @@
 					</div>
 				</ul>
 			</li>
-		</ul>
+		</ul> -->
 
 	</body>
 </html>
