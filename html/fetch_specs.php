@@ -16,6 +16,12 @@ if (!$conn) {
 
 // A function for general queries.
 function query_to_db($conn, $sql){
+<<<<<<< HEAD
+=======
+
+	$result = mysqli_query($conn, $sql);
+
+>>>>>>> 875110a99986b78b5f792c67d4da878ecfe6629a
     $result = mysqli_query($conn, $sql);
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
