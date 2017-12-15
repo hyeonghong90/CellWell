@@ -21,11 +21,7 @@ function query_to_db($conn, $sql){
     	if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-<<<<<<< HEAD
                 echo "<div class='phone' value='" . $row["cellName"] . "'><img id='thumbnail' src='" . $row["picture_path"] . "'><h3>" . $row["cellName"] . "</h3></div>";
-=======
-                echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . $row["cellName"] . "</h3></div>";
->>>>>>> 4aa69e69683c7ec990d9509308cd0b6764696ebc
             }
             echo "</div>";
     		// echo "Your query was successful";

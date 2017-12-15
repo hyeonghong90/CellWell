@@ -219,8 +219,7 @@ li .sub:hover {
 .phones .phone h3:hover {
   background-color: #60515e;
   color: white;
-  font-weight: bold;
-
+  font-weight: normal;
 }
 
 .phones h1 {
@@ -233,10 +232,15 @@ li .sub:hover {
   height: 150px;
 }
 
+#thumbnail-detail {
+  width: 220px;
+  height: 250px;
+}
+
 table {
   margin-bottom: 25px;
   margin-top: 25px;
-  margin-left: 25px;
+  margin-left: 50px;
 }
 
 table, th, td {
@@ -251,6 +255,9 @@ table, th, td {
 th {
   background-color: #60515e;
   color: white;
+  padding: 5px;
+  font-size: 15px;
+  border-bottom: black 1px solid;
 }
 
 td {
