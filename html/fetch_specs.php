@@ -18,13 +18,12 @@ if (!$conn) {
 function query_to_db($conn, $sql){
 
 	$result = mysqli_query($conn, $sql);
-
-    $result = mysqli_query($conn, $sql);
+    
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='phone' value='" . $row["cellName"] . "'>" . 
+                echo "<div value='" . $row["cellName"] . "'>" . 
                 $row["cellName"] . 
                 $row["phoneMaker"] . 
                 $row["os"] . 

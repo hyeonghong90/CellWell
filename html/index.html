@@ -31,6 +31,7 @@
                 $(".phones").empty();
 
     			$.post("fetch_specs.php", { model_name: $phone }, function(data, status) {
+                        var trim = data.split('#')[0];
     					$(".phones").html("<h1>" + $phone + " Specs</h1>" + data).fadeIn();
     				}
     			);
@@ -274,9 +275,9 @@
 			<li class="facet-list">
 				DISPLAY SIZE
 				<ul>
-					<li id="display-6" class="sub">6 in. and above</li>
-					<li id="display-5" class="sub">5 in. and above</li>
-					<li id="display-4" class="sub">4 in. and above</li>
+					<li id="display-6" class="sub">6 - 6.9 in.</li>
+					<li id="display-5" class="sub">5 - 5.9 in.</li>
+					<li id="display-4" class="sub">4 - 4.9 in.</li>
 				</ul>
 			</li>
 			<li class="facet-list">
@@ -317,6 +318,7 @@
 	        <div class="phone" value="Razer">
 	        	<img id="thumbnail" src="./img/phone-imgs/razer.jpg">
 	         	<h3>Razer</h3> -->
+
                 <h1>Specs</h1>
 
                 <div id="specs-table">

@@ -11,59 +11,66 @@ $conn = mysqli_connect($server, $username, $password, $db);
 
 // Check connection
 if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 // A function for general queries.
 function query_to_db($conn, $sql){
-	$result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql);
     if ($result) {   
-    	if (mysqli_num_rows($result) > 0){
+        if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='phone' value='" . $row["cellName"] . "'><h3>" . 
-                $row["cellName"] . 
-                $row["phoneMaker"] . 
-                $row["os"] . 
-                $row["chipset"] . 
-                $row["dimensionsInches"] . 
-                $row["weightOunches"] . 
-                $row["internalMemoryGB"] . 
-                $row["internalRAMGB"] . 
-                $row["displayType"] . 
-                $row["displaySizeInches"] . 
-                $row["displayResPixels"] . 
-                $row["displayRatio"] . 
-                $row["frontCamera"] . 
-                $row["rearCamera"] . 
-                $row["batterysizemAh"] . 
-                $row["removableMemory"] . 
-                $row["jack3.5mm"] .
-                $row["fingerprintScanner"] .
-                "</h3></div>";
+                echo "<div class='phone' value='" . $row["cellName"] . "'><img id='thumbnail' src='" . $row["picture_path"] . "'><h3>" . $row["cellName"] . "</h3></div>";
             }
             echo "</div>";
-    		// echo "Your query was successful";
-    	} else {
-    		echo "No results found. Try again?";
-    	}
+            // echo "Your query was successful";
+        } else {
+            echo "No results found. Try again?";
+        }
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
 
-$model_name = $_POST["model_name"];
 
 // Creating a query
-$query = "SELECT * FROM celldata as c1
+$query = "SELECT DISTINCT(cellName), picture_path FROM celldata as c1
 JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
 JOIN cellcarriers as c5 ON c4.cellCarriers_carrierID = c5.carrierID
-JOIN pictures as pic ON c1.cellID = pic.cellData_cellID
-WHERE c1.cellName = '" . $model_name . "' 
-ORDER BY c1.cellName;";
+JOIN pictures as pic ON c1.cellID = pic.cellData_cellID ";
 
+// Adding conditions based on the user query
+if (strpos($query, 'WHERE') == false){
+    $query = $query . "WHERE ";
+}
+if (!empty($_POST["brand"])){
+    $query = $query . "c1.phoneMaker = '" . $_POST["brand"] . "'\nOR";
+}
+if (!empty($_POST["carrier"])){
+    $query = $query . "c5.carrierName = '" . $_POST["carrier"] . "'\nOR";
+}
+if (!empty($_POST["display_size"])){
+    $query = $query . "c1.displaySizeInches LIKE '" . $_POST["display_size"] . "%'\nOR";
+}
+if (!empty($_POST["os"])){
+    $query = $query . "c1.os = '" . $_POST["os"] . "'\nOR";
+}
+if (!empty($_POST["resolution"])){
+    $query = $query . "c1.displayResPixels LIKE '" . $_POST["resolution"] . "%'\nOR";
+}
+if (!empty($_POST["user_input"])){
+    $query = $query . "c1.cellName LIKE '%" . $_POST["user_input"] . "%'\nOR";
+}
+
+// removing last "OR"
+if (substr($query, -3, 3) == "OR") {
+    $query = substr($query, 0, -3);
+}
+
+$query = $query . "ORDER BY c1.cellName;";
 query_to_db($conn, $query);
 
 mysqli_close($conn);
