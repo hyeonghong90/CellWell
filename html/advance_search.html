@@ -55,41 +55,6 @@
     			$.post("cellwell_master.php", { facet_keyword: "only-samsung" } );
     		}*/
 		});
-	$(document).ready(function(){
-	
-		// Select a parent of a clicked row
-		$("ul").click(function(){				
-			// $(this).parents("#table").after("<div class='added'>Clicked: " + $(this).text() + "</div>");
-			// $(this).parents("#table").append("<div class='added'>Clicked: " + $(this).text() + "</div>");
-			$(this).parents("#table").before("<div class='added'>" + $(this).text() + "</div>");
-			});
-		
-	});
-
-	// $(document).ready(function(){
-	// 	$('facet-list').click(function(){
-	// 		alert('TEST');
-	// 	});
-	// });
-
-		// function facetClick() {
-		// 	var $class = $(this).class;
-
-		// 	$($class).click(function(){
-		// 		alert("TEST");
-		// 	})
-		// }
-
-		// function facetClick() {
-		// 	var $id = $(this).id;
-
-  //   		$($id).click(function() {
-  //   			alert("only apple");
-  //   		});
-
-  //   		return false;
-		// }
-
 		
  	</script>
 
@@ -130,305 +95,322 @@
 
 
 		<section class="facetsAD">
-	    	<div class="wrapper">
+	    <div class="wrapper">
 	    <h2>Advance Search</h2>
 
 		<ul>
-			<li class="facet-listAD">BRANDS
-				<ul class="">
-					<li id="brand-apple" class="sub" >Apple</li>
-					<li id="brand-blackberry" class="sub">BlackBerry</li>
-					<li id="brand-google" class="sub">Google</li>
-					<li id="brand-huawei" class="sub">Huawei</li>
-					<li id="brand-htc" class="sub">HTC</li>
-					<li id="brand-lg" class="sub">LG</li>
-					<li id="brand-motorola" class="sub">Motorola</li>
-					<li id="brand-nokia" class="sub">Nokia</li>
-					<li id="brand-samsung" class="sub">Samsung</li>
-					<li id="brand-sony" class="sub">Sony</li>
-					<li id="brand-windows" class="sub">Windows</li>
-				</ul>
-			</li>
-			<li class="facet-listAD">CARRIERS
-				<ul>
-					<li id="carrier-at&t" class="sub">AT&T</li>
-					<li id="carrier-sprint" class="sub">Sprint</li>
-					<li id="carrier-tmobile" class="sub">T-Mobile</li>
-					<li id="carrier-verizon" class="sub">Verizon</li>
-				</ul>
-			</li>
-			<li class="facet-listAD">
-				DISPLAY SIZE
-				<ul>
-					<li class="sub">6 in.</li>
-					<li class="sub">5 in.</li>
-					<li class="sub">4 in.</li>
+			<li class="facet-listAD"><h3>BRANDS</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="brand-apple"/> 
+								<label for="brand-apple">Apple</label>
+
+							<input type="checkbox" id="brand-blackberry"/> 
+								<label for="brand-blackberry">BlackBerry</label>
+
+							<input type="checkbox" id="brand-google"/> 
+								<label for="brand-google">Google</label>
+							
+							<input type="checkbox" id="brand-huawei"/> 
+								<label for="brand-huawei">Huawei</label>
+
+							<input type="checkbox" id="brand-htc"/> 
+								<label for="brand-htc">HTC</label>
+
+							<input type="checkbox" id="brand-lg"/> 
+								<label for="brand-lg">LG</label>
+
+							<input type="checkbox" id="brand-motorola"/> 
+								<label for="brand-motorola">Motorola</label>
+							
+							<input type="checkbox" id="brand-nokia"/> 
+								<label for="brand-nokia">Nokia</label>
+							
+							<input type="checkbox" id="brand-samsung"/> 
+								<label for="brand-samsung">Samsung</label>
+							
+							<input type="checkbox" id="brand-sony"/> 
+								<label for="brand-sony">Sony</label>
+							
+							<input type="checkbox" id="brand-windows"/> 
+								<label for="brand-windows">Windows</label>
+						</form>
+					</div>
 				</ul>
 			</li>
 
-			<li class="facet-listAD">
-				Chipset
-				<ul>
-					<li class="sub">Apple A11 Bionic</li>
-					<li class="sub">Exynos 7420 Octa</li>
-					<li class="sub">Mediatek MT6737</li>
-					<li class="sub">Mediatek MT6757 Helio P20</li>
-					<li class="sub">Qualcomm Snapdragon 212</li>
-					<li class="sub">Qualcomm Snapdragon 630</li>
-					<li class="sub">Qualcomm MSM8226 Snapdragon 400</li>
-					<li class="sub">Qualcomm MSM8992 Snapdragon 808</li>
-					<li class="sub">Qualcomm MSM8994 Snapdragon 810</li>
-					<li class="sub">Qualcomm MSM8996 Snapdragon 820</li>
-					<li class="sub">Qualcomm MSM8996 Snapdragon 821</li>
-					<li class="sub">Qualcomm MSM8998 Snapdragon 835</li>
-					<li class="sub">Qualcomm MSM8909 Snapdragon 210</li>
-					<li class="sub">Qualcomm MSM8937 Snapdragon 430</li>
-					<li class="sub">Qualcomm MSM8953 Snapdragon 625</li>
-					<li class="sub">Qualcomm MSM8953 Snapdragon 835</li>
-					<li class="sub">Qualcomm MSM8974AB Snapdragon 801</li>
-					<li class="sub">Qualcomm MSM8974AC Snapdragon 801</li>
-					<li class="sub">Qualcomm MSM8996 Snapdragon 617</li>
-					<li class="sub">Qualcomm MSM8996 Snapdragon 810</li>
-				</ul>
-			</li>
-
-			<li class="facet-listAD">
-				OPERATING SYSTEM
-				<ul>
-					<li class="sub">ANDROID</li>
-					<li class="sub">iOS</li>	
-				</ul>
-			</li>
-			<li class="facet-listAD">Display Type
-				<ul>
-					<li class="sub">16M colors</li>
-					<li class="sub">AMOLED capacitive touchscreen</li>
-					<li class="sub">IPS LCD capacitive touchscreen</li>
-					<li class="sub">LED-backlit IPS LCD</li>
-					<li class="sub">LTPS IPS LCD capacitive touchscreen</li>				
-					<li class="sub">OLED capacitive touchscreen</li>
-					<li class="sub">P-OLED capacitive touchscreen</li>
-					<li class="sub">Super AMOLED capacitive touchscreen</li>
-					<li class="sub">Super LCD5 capacitive touchscreen</li>
-				</ul>
-			</li>
-			<li class="facet-listAD">Internal Memory
-				<ul>
-					<li class="sub">8 GB</li>
-					<li class="sub">16 GB</li>
-					<li class="sub">32 GB</li>
-					<li class="sub">64 GB</li>
-					<li class="sub">128 GB</li>
-					<li class="sub">256 GB</li>				
-				</ul>
-			</li>
-
-			<li class="facet-listAD">Internal RAM
-				<ul>
-					<li class="sub">1 GB</li>
-					<li class="sub">2 GB</li>
-					<li class="sub">3 GB</li>
-					<li class="sub">4 GB</li>
-					<li class="sub">6 GB</li>				
-				</ul>
-			</li>
-
-			<li class="facet-listAD">Display Size (inches)
-				<ul>
-					<li class="sub">4.5</li>
-					<li class="sub">4.7</li>
-					<li class="sub">5.0</li>
-					<li class="sub">5.1</li>
-					<li class="sub">5.2</li>
-					<li class="sub">5.3</li>
-					<li class="sub">5.5</li>
-					<li class="sub">5.7</li>
-					<li class="sub">5.8</li>
-					<li class="sub">6.0</li>
-					<li class="sub">6.3</li>	
-				</ul>
-			</li>
-
-			<li class="facet-listAD">Battery Size (mAh)
-				<ul>
-					<li class="sub">1960</li>
-					<li class="sub">2505</li>
-					<li class="sub">2610</li>
-					<li class="sub">2691</li>
-					<li class="sub">2700</li>
-					<li class="sub">3200</li>
-					<li class="sub">2716</li>
-					<li class="sub">1821</li>
-					<li class="sub">2900</li>
-					<li class="sub">3000</li>
-					<li class="sub">2000</li>
-					<li class="sub">3349</li>
-					<li class="sub">3450</li>
-					<li class="sub">2100</li>
-					<li class="sub">3430</li>
-					<li class="sub">3090</li>
-					<li class="sub">2930</li>
-					<li class="sub">2630</li>
-					<li class="sub">3520</li>
-					<li class="sub">3500</li>
-					<li class="sub">3600</li>
-					<li class="sub">2770</li>
-					<li class="sub">3300</li>
+			<li class="facet-listAD"><h3>CARRIERS</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="carrier-at&t"/> 
+								<label for="carrier-at&t">AT&T</label>
+							
+							<input type="checkbox" id="carrier-sprint"/> 
+								<label for="carrier-sprint">Sprint</label>
+							
+							<input type="checkbox" id="carrier-tmobile"/> 
+								<label for="carrier-tmobile">T-Mobile</label>
+							
+							<input type="checkbox" id="carrier-verizon"/> 
+								<label for="carrier-verizon">Verizon</label>
+						</form>
+					</div>
 				</ul>
 			</li>
 
 
-			<li class="facet-listAD">Removable Memory
-				<ul>
-					<li class="sub">Yes</li>
-					<li class="sub">No</li>
+			<li class="facet-listAD"><h3>DISPLAY SIZE</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">	
+							<input type="checkbox" id="displaysize-above6in"/> 
+								<label for="displaysize-above6in">Above 6 in.</label>
+							
+							<input type="checkbox" id="displaysize-above5in"/> 
+								<label for="displaysize-above5in">Above 5 in.</label>
+							
+							<input type="checkbox" id="displaysize-above4in"/> 
+								<label for="displaysize-above4in">Above 4 in.</label>
+						</form>
+					</div>
 				</ul>
 			</li>
 
 
-			<li class="facet-listAD">3.5mm Jack
-				<ul>
-					<li class="sub">Yes</li>
-					<li class="sub">No</li>
+			<li class="facet-listAD"><h3>CHIPSET</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="chipset-apple"/> 
+								<label for="chipset-apple">Apple</label>
+							
+							<input type="checkbox" id="chipset-exynos"/> 
+								<label for="chipset-exynos">Exynos</label>
+							
+							<input type="checkbox" id="chipset-qualcomm"/> 
+								<label for="chipset-qualcomm">Qualcomm</label>
+						</form>
+					</div>
 				</ul>
 			</li>
 
 
-			<li class="facet-listAD">Fingerprint Scanner
-				<ul>
-					<li class="sub">No</li>
-					<li class="sub">Front</li>
-					<li class="sub">Rear</li>
-				</ul>
-			</li>
-
-			<li class="facet-listAD">Display Resolution (pixels)
-				<ul>
-					<li class="sub">1440 x 2560</li>
-					<li class="sub">1080 x 1920</li>
-					<li class="sub">1440 x 2880</li>
-					<li class="sub">1125 x 2436</li>
-					<li class="sub">750 x 1334</li>
-					<li class="sub">720 x 1280</li>
-					<li class="sub">1440 x 2960</li>
-					<li class="sub">1080 x 1620</li>
-				</ul>
-			</li>
-
-			<li class="facet-listAD">Display Ratio
-				<ul>
-					<li class="sub">18:9</li>
-					<li class="sub">16:9</li>
-					<li class="sub">19.5:9</li>
-					<li class="sub">18.5:9</li>
-					<li class="sub">3:2</li>
-				</ul>
-			</li>
-
-			<li class="facet-listAD">Front Camera
-				<ul>
-					<li class="sub">5 MP</li>
-					<li class="sub">2.2 MP</li>
-					<li class="sub">7 MP</li>
-					<li class="sub">8 MP</li>
-					<li class="sub">13 MP</li>
-					<li class="sub">1.1 MP</li>
-
-					<li class="sub">f/1.7</li>
-					<li class="sub">f/1.9</li>
-					<li class="sub">f/2.0</li>
-					<li class="sub">f/2.2</li>
-					<li class="sub">f/2.4</li>
-					<li class="sub">f/2.8</li>
-
-					<li class="sub">1/32" sensor size</li>
-					<li class="sub">1/5" sensor size</li>
-					<li class="sub">1/4" sensor size</li>
-					<li class="sub">1/3" sensor size</li>
-
-					<li class="sub">1.0 um pixel size</li>
-					<li class="sub">1.12 um pixel size</li>
-					<li class="sub">1.4 um pixel size</li>
-					<li class="sub">1.34 um pixel size</li>
-					<li class="sub">1.22 um pixel size</li>
-
-					<li class="sub">1080p</li>
-					<li class="sub">480p</li>
-					<li class="sub">1080@30fps</li>
-					<li class="sub">720p@240fps</li>
-					<li class="sub">720p video</li>
-					<li class="sub">720@70fps</li>
-					<li class="sub">1440p@30fps</li>
-
-					<li class="sub">32mm</li>
-					<li class="sub">22mm</li>
-					<li class="sub">23mm</li>
-
-					<li class="sub">panorama</li>
-					<li class="sub">EIS (gyro)</li>
-					<li class="sub">HDR</li>
-					<li class="sub">Auto HDR</li>
-					<li class="sub">autofocus</li>
-					<li class="sub">face detection</li>
-					<li class="sub">phase detection autofocus</li>
-					<li class="sub">dual video call</li>
-					<li class="sub">LED flash</li>
+			<li class="facet-listAD"><h3>OPERATING SYSTEM</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="os-android"/> 
+								<label for="os-android">Android</label>
+							
+							<input type="checkbox" id="os-ios"/> 
+								<label for="os-ios">iOS</label>	
+						</form>			
+					</div>
 				</ul>
 			</li>
 
 
-			<!-- <li class="facet-listAD">Rear Camera
-				<ul>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-					<li class="sub"></li>
-				</ul>
-			</li> -->
+			<li class="facet-listAD"><h3>DISPLAY TYPE</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="displaytype-16m"/> 
+									<label for="displaytype-16m">16M colors</label>
+							
+							<input type="checkbox" id="displaytype-amoled"/> 
+								<label for="displaytype-amoled">AMOLED capacitive touchscreen</label>
 
+							<input type="checkbox" id="displaytype-ipslcd"/> 
+									<label for="displaytype-ipslcd">IPS LCD capacitive touchscreen</label>
+							
+							<input type="checkbox" id="displaytype-ledbacklit"/> 
+								<label for="displaytype-ledbacklit">LED-backlit IPS LCD</label>	
+
+							<input type="checkbox" id="displaytype-ltpsipslcs"/> 
+									<label for="displaytype-ltpsipslcs">LTPS IPS LCD capacitive touchscreen</label>
+							
+							<input type="checkbox" id="displaytype-olded"/> 
+								<label for="displaytype-olded">OLED capacitive touchscreen</label>	
+
+							<input type="checkbox" id="displaytype-poled"/> 
+									<label for="displaytype-poled">P-OLED capacitive touchscreen</label>		
+
+							<input type="checkbox" id="displaytype-superamoled"/> 
+								<label for="displaytype-superamoled">Super AMOLED capacitive touchscreen</label>	
+
+							<input type="checkbox" id="displaytype-superlcd5"/> 
+									<label for="displaytype-superlcd5">Super LCD5 capacitive touchscreen</label>
+						</form>
+					</div>
+				</ul>
+			</li>
+
+			<li class="facet-listAD"><h3>INTERNAL MEMORY</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">		
+							<input type="checkbox" id="internalmemory-8"/> 
+								<label for="internalmemory-8">8 GB</label>
+							
+							<input type="checkbox" id="internalmemory-16"/> 
+								<label for="internalmemory-16">16 GB</label>
+
+							<input type="checkbox" id="internalmemory-32"/> 
+								<label for="internalmemory-32">32 GB</label>
+							
+							<input type="checkbox" id="internalmemory-64"/> 
+								<label for="internalmemory-64">64 GB</label>
+
+							<input type="checkbox" id="internalmemory-128"/> 
+								<label for="internalmemory-128">128 GB</label>
+							
+							<input type="checkbox" id="internalmemory-256"/> 
+								<label for="internalmemory-256">256 GB</label>				
+						</form>
+					</div>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD"><h3>INTERNAL RAM</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="internalram-1"/> 
+								<label for="internalram-1">1 GB</label>
+							
+							<input type="checkbox" id="internalram-2"/> 
+								<label for="internalram-1">2 GB</label>
+
+							<input type="checkbox" id="internalram-3"/> 
+								<label for="internalram-1">3 GB</label>
+							
+							<input type="checkbox" id="internalram-4"/> 
+								<label for="internalram-1">4 GB</label>
+
+							<input type="checkbox" id="internalram-6"/> 
+								<label for="internalram-1">6 GB</label>	
+						</form>
+					</div>
+				</ul>
+			</li>
+
+			<li class="facet-listAD"><h3>BATTERY SIZE (mAh)</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="checkbox" id="battersize-above1500"/> 
+								<label for="battersize-above1500">Above 1500 mAh</label>
+							
+							<input type="checkbox" id="battersize-above2000"/> 
+								<label for="battersize-above2000">Above 2000 mAh</label>
+
+							<input type="checkbox" id="battersize-above3000"/> 
+								<label for="battersize-above3000">Above 3000 mAh</label>
+						</form>
+					</div>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD"><h3>REMOVABLE MEMORY</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<form action="cellwell_master.php">
+							<input type="radio" id="removablememory-yes"/> 
+								<label for="removablememory-yes">Yes</label>
+							
+							<input type="radio" id="removablememory-no"/> 
+								<label for="removablememory-no">No</label>
+						</form>
+					</div>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD"><h3>3.5mm JACK</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<input type="radio" id="35mmjack-yes"/> 
+							<label for="35mmjack-yes">Yes</label>
+						
+						<input type="radio" id="35mmjack-no"/> 
+							<label for="35mmjack-no">No</label>
+					</div>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD"><h3>FINGERPRINT SCANNER</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<input type="radio" id="fingerprintscanner-no"/> 
+							<label for="fingerprintscanner-no">No</label>
+					
+						<input type="radio" id="fingerprintscanner-front"/> 
+							<label for="fingerprintscanner-front">Front</label>
+
+						<input type="radio" id="fingerprintscanner-rear"/> 
+							<label for="fingerprintscanner-rear">Rear</label>
+					</div>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD"><h3>DISPLAY RESOLUTION</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<input type="checkbox" id="displayres-720x1280"/> 
+							<label for="displayres-720x1280">720 x 1280</label>
+
+						<input type="checkbox" id="displayres-750x1334"/> 
+							<label for="displayres-750x1334">750 x 1334</label>
+
+						<input type="checkbox" id="displayres-1080x1620"/> 
+							<label for="displayres-1080x1620">1080 x 1620</label>
+
+						<input type="checkbox" id="displayres-1080x1920"/> 
+							<label for="displayres-1080x1920">1080 x 1920</label>
+
+						<input type="checkbox" id="displayres-1125x2436"/> 
+							<label for="displayres-1125x2436">1125 x 2436</label>
+
+						<input type="checkbox" id="displayres-1440x2560"/> 
+							<label for="displayres-1440x2560">1440 x 2560</label>
+
+						<input type="checkbox" id="displayres-1440x2880"/> 
+							<label for="displayres-1440x2880">1440 x 2880</label>
+
+						<input type="checkbox" id="displayres-1440x2960"/> 
+							<label for="displayres-1440x2960">1440 x 2960</label>
+					</div>
+				</ul>
+			</li>
+
+
+			<li class="facet-listAD"><h3>DISPLAY RATIO</h3>
+				<ul class="checkboxFourInput">
+					<div class="checkboxFourInput">
+						<input type="checkbox" id="displayratio-3:2"/> 
+							<label for="displayratio-3:2">3:2</label>
+
+						<input type="checkbox" id="displayratio-16:9"/> 
+							<label for="displayratio-16:9">16:9</label>
+
+						<input type="checkbox" id="displayratio-18:9"/> 
+							<label for="displayratio-18:9">18:9</label>
+
+						<input type="checkbox" id="displayratio-18.5:9"/> 
+							<label for="displayratio-18.5:9">18.5:9</label>
+
+						<input type="checkbox" id="displayratio-19.5:9"/> 
+							<label for="displayratio-19.5:9">19.5:9</label>
+					</div>
+				</ul>
+			</li>
 		</ul>
-
-
-		</div>
-		</section>
-
-		<section class="selected-filters">
-			<table id =table class="wrapper">
-	      		<h1>Selected Filters</h1>
-	      			
-			        <!-- <div class="phone">
-						<img src="./img/phone-imgs/iphonex.jpg">
-						<h3>iPhone X</h3>
-			        </div> -->
-
-			        <!-- <div class="phone">
-			         	<img src="./img/phone-imgs/iphone8.jpg">
-			         	<h3>iPhone 8</h3>
-			        </div>
-
-			        <div class="phone">
-			        	<img src="./img/phone-imgs/razer.jpg">
-			         	<h3>Razer</h3>
-			        </div> -->
-	     	</div>
-    	</section>
-	
 
 	</body>
 </html>
