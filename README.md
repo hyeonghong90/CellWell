@@ -8,7 +8,7 @@ This is the repository for the Cell Well project from INST377 class at UMD.
 - Jae Keshawn    jmyers17@terpmail.umd.edu
 - Jan Christian  jancvsantos@gmail.com
 - Nathan Abbott  nathanabbott1993@gmail.com
-- Hyeong-gi      hhong17@terpmail.umd.edu
+- Hyeong-gi Hong      hhong17@terpmail.umd.edu
 
 ### Information Problem:
 There are currently no smartphone databases tailored for the average smartphone buyer/user.
