@@ -16,39 +16,31 @@ if (!$conn) {
 
 // A function for general queries.
 function query_to_db($conn, $sql){
-<<<<<<< HEAD
-=======
-
-	$result = mysqli_query($conn, $sql);
-
->>>>>>> 875110a99986b78b5f792c67d4da878ecfe6629a
     $result = mysqli_query($conn, $sql);
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
+            $cell_info = array();
             echo "<div class='wrapper'>";
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='phone' value='" . $row["cellName"] . "'>" . 
-                $row["cellName"] . 
-                $row["phoneMaker"] . 
-                $row["os"] . 
-                $row["chipset"] . 
-                $row["dimensionsInches"] . 
-                $row["weightOunches"] . 
-                $row["internalMemoryGB"] . 
-                $row["internalRAMGB"] . 
-                $row["displayType"] . 
-                $row["displaySizeInches"] . 
-                $row["displayResPixels"] . 
-                $row["displayRatio"] . 
-                $row["frontCamera"] . 
-                $row["rearCamera"] . 
-                $row["batterysizemAh"] . 
-                $row["removableMemory"] . 
-                $row["jack3.5mm"] .
-                $row["fingerprintScanner"] .
-                "</div>";
+                foreach ($row as $r) {
+                    $key = array_search($r, $row);
+                    if (in_array($r, $cell_info) === false) {
+                        $cell_info[$key] = array();
+                        array_push($cell_info[$key], $r);
+                    } else {
+                        array_push($cell_info[$key], $cell_info[$key], $r);
+                    }
+                }               
             }
-            echo "</div>";
+            echo "<div class='phone' value='" . $row["cellName"] . "'>";
+                    foreach ($cell_info as $cell => $value){
+                        foreach ($value as $val){
+                            echo "<pre>";
+                            print_r($cell . ": " . $val);
+                            echo "</pre>"; 
+                        }
+                    }
+            echo "</div></div>";
     		// echo "Your query was successful";
     	} else {
     		echo "No results found. Try again?";
@@ -61,7 +53,8 @@ function query_to_db($conn, $sql){
 $model_name = $_POST["model_name"];
 
 // Creating a query
-$query = "SELECT * FROM celldata as c1
+$query = "SELECT cellName, phoneMaker, os, chipset, dimensionsInches, weightOunches, internalMemoryGB, internalRAMGB, displayType, displaySizeInches, displayResPixels, displayRatio, frontCamera, rearCamera, batterySizemAh, removableMemory, 'jack3.5mm', fingerprintScanner, cellBand, carrierName, picture_path
+FROM celldata as c1
 JOIN celldata_has_cellbands c2 ON c1.cellID = c2.cellData_cellID
 JOIN cellbands as c3 ON c2.cellBands_cellBandID = c3.cellBandID
 JOIN cellcarriers_has_cellbands c4 ON c3.cellBandID = c4.cellBands_cellBandID
