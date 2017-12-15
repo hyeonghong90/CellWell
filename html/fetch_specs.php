@@ -30,9 +30,12 @@ function query_to_db($conn, $sql){
                     $key = array_search($r, $row);
                     if (in_array($r, $cell_info) === false) {
                         $cell_info[$key] = array();
-                        array_push($cell_info[$key], $r);
-                    } else {
-                        array_push($cell_info[$key], $cell_info[$key], $r);
+                        if (empty($cell_info[$key][0])) {
+                            array_push($cell_info[$key], $r);
+                        }
+                        else {
+                            array_push($cell_info[$key], $cell_info[$key][0], $r);
+                        }
                     }
                 }     
             }
