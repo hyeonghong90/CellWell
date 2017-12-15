@@ -84,11 +84,6 @@ nav li a:hover {
   width: 200px;
 }
 
-/*#search-again {
-  display: none;
-  visibility: 
-}*/
-
 .sbutton {
   cursor: pointer;
   background-color: #60515e;
@@ -334,15 +329,6 @@ td {
     /*margin-left: 30px;*/
     display: inline-table;
 }
-
-/*.facetsAD li.facet-listAD {
-     display: inline-block;
-    width: 40%;
-    height: 30%;
-    border: 1px black solid;
-    background: aliceblue;   
-    vertical-align:top;
-}*/
 
 
 .facetsAD li.facet-listAD {

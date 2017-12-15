@@ -2,10 +2,10 @@
 <html>
 	<head>
     <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cell Well</title>
     <link rel="stylesheet" href="./css/style-default.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -14,6 +14,7 @@
  	<script type="text/javascript">
 		$(document).ready (function() {
 
+        // custom accordion function
 			$(function(){
 				$('li:has(ul)').click(function(event) {
 						if (this == event.target) {
@@ -25,6 +26,7 @@
 					.children().hide();
 			});
 
+        // send model names to php for returning all specs; event delegation for php returns
 			$(document).on('click','.phone',function() {
 				var $phone = $(this).attr('value');
                 $(".phones").empty();
@@ -38,6 +40,7 @@
 			
 			$("#search-again").hide();
 
+        // hides header when search is submitted
     		$(document).on("click", "#search-submit", function() {
 	        	var $query = $("#search-query").val();
 				$("#intro").slideUp();
@@ -45,8 +48,6 @@
 				$("#search-again").fadeIn(1000);
 
 	        	$("#search-form").trigger("reset");
-	        	// $("#message").html("Results for '" + $query + "' below.").fadeIn(2000).delay(3000).fadeOut(2000);
-
 
         	$.post("cellwell_master.php", { user_input: $query }, function(data, status) {
            			$("#query-confirm").html("Query received!");
@@ -57,12 +58,14 @@
     		}
     	);
 
+        // shows header when 'search again' button is clicked
     		$("#header-slider").click(function() {
     			$("#intro").slideDown();
     			$("#filler-msg").fadeIn(1000);
     			$("#search-again").hide();
     		});
 
+        // functions that send keywords to php to signal what kind of query to make
     		$("#brand-apple").click(function() {
 				$(".phones").fadeOut();
 
@@ -98,7 +101,6 @@
     			}
     		);
 
-    		// this ain't working for some reason
     		$("#carrier-tmobile").click(function() {
     			$(".phones").fadeOut();
     			$.post("cellwell_master.php", { carrier: "T-Mobile" }, function(data, status) {
@@ -192,7 +194,7 @@
 
 		}); // end of doc.ready
 
-			// test function for clicking facets
+		// test function for clicking facets; unused
 		function facetClick() {
     		$(this).click(function() {
     			var $value = $(this).attr("id");
