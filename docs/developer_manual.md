@@ -57,7 +57,6 @@ This document explains how to launch the CellWell webpage using various systems,
 	
 ## File Structure: <br> <br>
 ![alt text](https://farm5.staticflickr.com/4681/38349450854_26ce7c06ee.jpg "File Structure") <br>
-
 	**cellwell_master.php file :** <br>
 		- Ensures server is running and database is connected. <br>
 		- Query connecting webpage features to aspects of database. <br> <br>
