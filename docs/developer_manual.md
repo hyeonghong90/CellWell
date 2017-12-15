@@ -95,7 +95,7 @@ This document explains how to launch the CellWell webpage using various systems,
 	**get_images.php**: <br>
 		- PHP code that gets the cellID and inserts the corresponding image by its image path, manufacturer name,and model name.   		 <br><br>
 	**advanced_search.html:**<br>
-		- HTML code that creates an button-styled element list for all of the clickable features the user is able to filter by.   		 <br>
+		- HTML code that creates a button-styled element list for all of the clickable features the user is able to filter by.   		 <br>
 		- The code structure references the style-default.css file to style advanced search buttons into filtration checkboxes. 		<br><br>
 	**fetch_specs.php** <br>
 		- PHP code structured to use query to fetch specifications from database and display on webpage. <br><br>
