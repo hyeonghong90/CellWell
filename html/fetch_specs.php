@@ -17,8 +17,9 @@ if (!$conn) {
 // A function for general queries.
 function query_to_db($conn, $sql){
 
+
 	$result = mysqli_query($conn, $sql);
-    
+
     if ($result) {   
     	if (mysqli_num_rows($result) > 0){
             echo "<div class='wrapper'>";
