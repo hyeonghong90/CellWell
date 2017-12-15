@@ -26,7 +26,7 @@ function query_to_db($conn, $sql){
             echo "</div>";
     		// echo "Your query was successful";
     	} else {
-    		echo "No results found. Try again?";
+    		echo "<img src='img/sad_face.png'><br/><h3>No results found. Try again?</h3><p style='margin-bottom:20px; font-size:12px'><strong>Tip:</strong> Please only input a phone or manufacturer name.</p>";
     	}
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
